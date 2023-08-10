@@ -20,7 +20,7 @@
 ## 远程连接
 1. 在虚拟机中连接上网
 2. 通过`ifconfig`指令获取虚拟机的ip地址(不联网的话是拿不到ip地址的)
-   ![Alt text](data/Linux/image.png)
+   ![Alt text](data/Linux/ifconfig.png)
 3. 在本机中通过`ping`指令来确认ip地址的有效性![Alt text](data/Linux/ping.png)
 4. 确认ip地址的有效性后通过MobaXterm的Session选项来实现SSH显示的远程连接。
  ![Alt text](data/Linux/MobaXterm_1.png)
