@@ -96,12 +96,15 @@ ____
 
 * `/etc/passwd` : 用户的配置文件，记录用户的信息
   ![Alt text](data/Linux/userconfig_1.png)
+
 内容含义 : `用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell`
 ______
 * `/etc/shadow` : 用户口令的配置文件
   ![Alt text](data/Linux/userconfig_2.png)
+
 内容含义 : `登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标识`
 ______
 * `/etc/group` : 组的配置文件,记录Linux包含的组的信息
 ![Alt text](data/Linux/userconfig_3.png)
+
 内容含义 :`组名:口令:组标识号:组内用户列表`
