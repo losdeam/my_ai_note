@@ -18,8 +18,8 @@
     * 要是想偏硬件一点的就冲C++和python，然后我就不熟了(来个懂哥救一下)。
     * 要是想冲个cv方向的，先去好好做几个项目，cv的能做项目可太多了。但是一定要做几个有分量的(当然你要是水水过然后临场准备效果也是一样的，但是我非常不建议这么做)。别人我不确定，但是就我目前的经历而言，项目经历还是十分重要的。(我面试的时候至少三分之一的时间再讲项目)学的东西基本和算法的一样。但是视情况还要学一定的flask(python的后端框架),还有一定的前端。
     * 要是想去大数据方向的，把前面的c++都换成java(至少在我目前看到的基本都是用java的)，其余部分来个人补充一下，不熟
-
-* ## 网站推荐
+___
+ ## 网站推荐
 * [力扣](https://leetcode.cn/)，年轻人的第一个刷题网站。
 * [牛客](https://www.nowcoder.com/)，虽然我不在这上面刷算法，但是上面还有专项练习，查漏补缺还是很不错的。
 * [B站](https://www.bilibili.com/)，当代大学生真正的大学。
@@ -27,6 +27,7 @@
 * [github](https://github.com/),世界上最大的~~同性~~程序员交友网站
 * [gitee](https://gitee.com/explore)，中国版的github，目前还是有不少公司在用的
 * [csdn](https://www.csdn.net/)，遇事不决搜一下
+  ___
 ## 学习建议
 ### 机器学习&深度学习
 * [跟李沐学AI](https://space.bilibili.com/1567748478?spm_id_from=333.337.0.0)，机器学习和深度学习的大佬，讲解的还是很不错的
@@ -46,3 +47,10 @@ gitee最下方的git命令学习，可视化的展示git命令的效果，很好
 
 ### c++
 我是买了本C++ primer Plus 学的，目前学的还不错
+___
+##  项目推荐
+* [mediapipe](https://github.com/google/mediapipe)，谷歌的一个能识别人体姿态点的项目。可扩展性极强
+ ![Alt text](data/Readme/mediapipe.png)
+* [魔搭平台](https://modelscope.cn/my/overview)，阿里的一个ai平台，上面项目还是很多的，可以多看看。
+![Alt text](data/Readme/modelscope.png)
+* yolo , 图像识别巨头
