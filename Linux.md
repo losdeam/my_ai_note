@@ -125,15 +125,38 @@ ___
 * `6` : 系统重启
   
 使用`init`命令可以实现不同运行级别的切换(仅root用户可以)
-
+______
 
 ### [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
 (centos7和centos8的方式不太一样，下文是另一教程的总结与实践，原文请点击标题处)
 1. 重启虚拟机，在出现以下页面时快速移动光标，防止自动登录
-![Alt text](rootpw_1.png)
-2. 界面保持后按下键盘`e`键进入以下界面
-![Alt text](rootpw_2.png)
-3. 
+![Alt text](data/Linux/rootpw_1.png)
 
+2. 界面保持后按下键盘`e`键进入以下界面
+![Alt text](data/Linux/rootpw_2.png)
+
+3. 找到`linux`开头`quiet`结尾的行尾输入`空格+rd.break`,然后键盘按`ctrl+x` 进入紧急救援模式
+![Alt text](data/Linux/rootpw_3.png)
+![Alt text](data/Linux/rootpw_4.png)
+
+> * 输入`mount`将光标移动到末尾处可以看见`sysroot`是以只读模式挂载的，需要将其转换为读写模式重新挂载
+  
+4. 输入 `mount -o remount,rw /sysroot`重新挂载sysroot为读写模式
+5. 输入 `chroot /sysroot/`将目录切换至`sysroot`中
+> 由于中文语言在后续操作中会产生乱码，故要先改成英语模式。若已经是英语模式了，可以跳过
+6. 输入 `LANG=en`
+7. 输入 `touch /.autorelabel`来更新系统信息,否则可能会出现`passwd`更改并重启后依然无法登陆的情况
+8. 输入`passwd`以进行新密码的设置
+9. 输入`exit` 以退出sysroot 再输入`reboot`进行重启(重启时间可能会有点久)
+____
 ### 帮助指令
-* `man [命令或配置文件]`
+* `man [命令或配置文件]` : 查看命令的帮助信息
+* `help` : 获得shell内置命令的帮助信息
+______
+### 文件目录类
+* `pwd` : 显示当前工作目录的绝对路径
+* `ls [选项] [目录]`
+  > 常用选项
+  > * `-a` : 显示当前目录所有的文件和目录，包括隐藏的
+  > * `-l` : 以列表的方式显示信息
+* 
