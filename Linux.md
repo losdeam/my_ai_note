@@ -59,6 +59,7 @@ ___
 >`:wq` :保存文档并退出
 >`:q` :正常退出(未修改文档时)
 >`:q!` :不保存退出(不保存已有更改)
+
 ____
 ## shell指令大全
 
@@ -70,11 +71,11 @@ ____
 * `halt`  : 立刻关机
 * `reboot` :  立刻重启
 * `sync` : 把内存的数据同步到磁盘
-  
+___
 ### 用户登录登出
 * `logout` : 注销当前用户
 * `su - 用户名` : 尝试切换至另一用户，有密码则需输入密码
-
+___
 ### 用户管理
 * `useradd 用户名` : 添加一个用户
 * `passwd 用户名` : 给用户指定密码
@@ -84,14 +85,14 @@ ____
 * `userdel -r 用户名` : 删除用户及其家目录
 * `id 用户名` : 查询用户的信息
 * `whoami/who am i` : 查看当前用户
-
+___
 ### 用户组
 &emsp;  将用户进行分类,并对同组用户进行统一的管理
 * `groupadd 组名` : 新增组
 * `groupdel 组名` : 删除组
 * `useradd -g 用户组 用户名` : 在新增用户时直接加入组
 * `usermod -g 用户组 用户名` : 修改用户的组
-
+___
 #### 相关文件
 
 * `/etc/passwd` : 用户的配置文件，记录用户的信息
@@ -108,3 +109,31 @@ ______
 ![Alt text](data/Linux/userconfig_3.png)
 
 内容含义 :`组名:口令:组标识号:组内用户列表`
+___
+### 指定运行级别
+&emsp; Linux中有着7个运行级别分别是
+* `0` : 关机
+*  `1` : 单用户[找回丢失密码]
+![Alt text](data/Linux/init_1.png)
+* `2` : 多用户状态没有网络服务
+![Alt text](data/Linux/init_2.png)
+* `3` : 多用户状态有网络服务
+![Alt text](data/Linux/init_3.png)
+* `4` : 安全模式
+* `5` : 图形界面
+![Alt text](data/Linux/init_5.png)
+* `6` : 系统重启
+  
+使用`init`命令可以实现不同运行级别的切换(仅root用户可以)
+
+
+### [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
+(centos7和centos8的方式不太一样，下文是另一教程的总结与实践，原文请点击标题处)
+1. 重启虚拟机，在出现以下页面时快速移动光标，防止自动登录
+![Alt text](rootpw_1.png)
+2. 界面保持后按下键盘`e`键进入以下界面
+![Alt text](rootpw_2.png)
+3. 
+
+### 帮助指令
+* `man [命令或配置文件]`
