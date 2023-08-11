@@ -23,7 +23,7 @@ ___
 * [力扣](https://leetcode.cn/)，年轻人的第一个刷题网站。
 * [牛客](https://www.nowcoder.com/)，虽然我不在这上面刷算法，但是上面还有专项练习，查漏补缺还是很不错的。
 * [B站](https://www.bilibili.com/)，当代大学生真正的大学。
-* [kaggle](https://www.kaggle.com/)，ai的力扣
+* [kaggle](https://www.kaggle.com/)，ai的力扣，如果英语还不错的话可以尝试着直接在这个网站上进行python以及数据处理相关知识的学习
 * [github](https://github.com/),世界上最大的~~同性~~程序员交友网站
 * [gitee](https://gitee.com/explore)，中国版的github，目前还是有不少公司在用的
 * [csdn](https://www.csdn.net/)，遇事不决搜一下
@@ -53,4 +53,4 @@ ___
  ![Alt text](data/Readme/mediapipe.png)
 * [魔搭平台](https://modelscope.cn/my/overview)，阿里的一个ai平台，上面项目还是很多的，可以多看看。
 ![Alt text](data/Readme/modelscope.png)
-* yolo , 图像识别巨头
+* yolo , 图像识别巨头，而且在csdn上有着丰富的教程。完全支持小白的学习
