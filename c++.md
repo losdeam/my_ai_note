@@ -86,7 +86,7 @@ int psychics{};      //将空值(0)赋值给psychics
 * 知识
 ```c++
 int  a= 'M';
-    cout << a << endl; // 77
+cout << a << endl; // 77
 ```
 &emsp;&emsp;如果将字符直接赋值给整型的变量，整型变量中将会保存其ASCII编码值。
 
@@ -139,6 +139,69 @@ const int a= 10;
 ```
 
 ### 浮点数
+&emsp;&emsp;c++可以用两种不同的方式来书写浮点数
+1. 小数点表示法
+```
+12.34
+0.00023
+8.0
+```
+2. E表示法
+
+```
+2.52e+4  // 25200 = 2.52 * 10^4
+8.33E-4  //0.000833 = 8.33 * 10^-4
+7E5      // 700000 = 7* 10^ 5
+```
+#### 浮点类型
+1. `float`
+2. `double`
+3. `long double`
+
+
+<table>
+    <tr>
+        <td>第二个参数</td> 
+        <td>第一个参数</td> 
+        <td> 含义 </td>
+   </tr>
+    <tr>
+        <td rowspan="3">ios_base::basefield</td>    
+        <td >ios_base::dec</td>  
+        <td >使用10进制</td>  
+    </tr>
+    <tr>
+        <td >ios_base::oct</td>  
+        <td >使用8进制</td> 
+    </tr>
+    <tr>
+        <td >ios_base::hex</td>  
+        <td >使用16进制</td> 
+    </tr>
+     <tr>
+        <td rowspan="2">ios_base::floatfield</td>    
+        <td >ios_base::fixed</td>  
+        <td >使用定点计数法(即一般计数法)</td>  
+    </tr>
+    <tr>
+        <td >ios_base::scientific</td>  
+        <td >使用科学计数法</td> 
+    </tr>
+     <tr>
+        <td rowspan="3">ios_base::adjustfield</td>    
+        <td >ios_base::left</td>  
+        <td >左对齐</td>  
+    </tr>
+    <tr>
+        <td >ios_base::right</td>  
+        <td >右对齐</td> 
+    </tr>
+    <tr>
+        <td >ios_base::internal</td>  
+        <td >符合或前缀左对齐，值右对齐</td> 
+    </tr>
+</table>
+
 ______
 ## C++的语句
 
