@@ -154,11 +154,13 @@ const int a= 10;
 7E5      // 700000 = 7* 10^ 5
 ```
 #### 浮点类型
-1. `float`
-2. `double`
+1. `float`       
+2. `double`         
 3. `long double`
+   
+&emsp;&emsp;当我们使用`cout`函数进行输出时过于智能的`cout`会删除结尾的零,如果我们想要保留结尾的零或者想将显示的形式转换为`E表示法`时我们可以使用`cout.setf()`。`.`表示`setf`是`cout`对象的成员函数,只有通过对象才能进行调用。
 
-
+setf()函数
 <table>
     <tr>
         <td>第二个参数</td> 
