@@ -34,7 +34,7 @@ ___
 * 吴恩达，找不到主页了，但是课很不错
   
 ### git
-gitee最下方的git命令学习，可视化的展示git命令的效果，很好用。(要想直接看源码的在github上也有开源[点这里进入](https://github.com/pcottle/learnGitBranching))
+gitee最下方的[git命令学习](https://oschina.gitee.io/learn-git-branching/)，可视化的展示git命令的效果，很好用。(要想直接看源码的在github上也有开源[点这里进入](https://github.com/pcottle/learnGitBranching))
 ![Alt text](data/Readme/gitee.png)
 这玩意多用用其实很简单
 
