@@ -61,7 +61,7 @@ ___
 >`:q!` :不保存退出(不保存已有更改)
 
 ____
-## shell指令大全
+## shell指令大全(实操篇)
 
 ### 关机&重启命令
 * `shutdown -h now` : 立刻关机
@@ -123,8 +123,10 @@ ___
 * `5` : 图形界面
 ![Alt text](data/Linux/init_5.png)
 * `6` : 系统重启
-  
 使用`init`命令可以实现不同运行级别的切换(仅root用户可以)
+
+* `systemctl get-default` : 查看默认运行级别
+* `systemctl set-default multi-user.target` : 设置默认运行级别为多用户模式
 ______
 
 ### [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
@@ -158,7 +160,8 @@ ______
 * `ls [选项] [目录]`
   > 常用选项
   > * `-a` : 显示当前目录所有的文件和目录，包括隐藏的
-  > * `-l` : 以列表的方式显示信息
+  > * `-l` : 显示文件的详细信息
+  > * `-h` : 将文件的大小切换为更易阅读的模式
 * `cd [参数]` : 切换到指定目录
   > * `cd ~/cd` ： 回到当前用户的家目录
   > * `cd..`    : 回到当前目录的上一级目录
@@ -264,11 +267,13 @@ ___
 * `gzip 文件` ： 压缩文件，只能将文件压缩为*.gz文件
 * `gunzip 文件.gz` : 解压缩文件
 &emsp;
+  &emsp;
 *  `zip [选项] 压缩后文件.zip` : 将要压缩的内容 ： 压缩文件和目录
    * `-r` : 递归压缩，压缩路径下的所有文件(否则不会压缩进任何文件)  
 * `unzip [选项] 压缩后文件.zip` : 解压缩文件
   * `-d [目录]` : 指定解压后文件的存放目录
   &emsp;
+    &emsp;
 * `tar[选项] XXX.tat.gz 打包的内容` : 打包目录，压缩后的文件格式为.tar.gz
   * `-c` :  产生.tar打包文件
   * `-v` : 显示详细信息
@@ -276,3 +281,26 @@ ___
   * `-z` : 打包同时压缩
   * `-x` : 解包.tar文件
   ![Alt text](data/Linux/tar.png)
+____
+
+## 权限管理
+  &emsp;  &emsp;Linux中文件都是有归属的，通常情况下，文件属于该文件的创建者。也属于创建者所在的组
+  * ` ls -ahl `: 显示当前文件夹下所有文件的所有者
+
+![Alt text](data/Linux/ls-ahl.png)
+
+  * `chown 用户名 文件名` : 修改文件的所有者
+     * `-r` : 使得修改对目录下所有文件生效
+     * `用户名:组名` : 同时修改所属用户与组
+  * `chgrp 组名   文件名` : 修改文件所在的组  
+
+![Alt text](data/Linux/权限_1.png)
+> 第0位为`-`表示为普通文件
+> 空格后的数字表示该目录下有多少文件(文件则是文件本身)
+> 在后为所属用户名 ， 所属组名 ， 文件大小 
+>
+> 
+![Alt text](data/Linux/权限_2.png)
+
+![Alt text](data/Linux/权限_3.png)
+![Alt text](权限_4.png)
