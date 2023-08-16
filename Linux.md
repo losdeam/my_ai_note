@@ -299,8 +299,22 @@ ____
 > 空格后的数字表示该目录下有多少文件(文件则是文件本身)
 > 在后为所属用户名 ， 所属组名 ， 文件大小 
 >
-> 
 ![Alt text](data/Linux/权限_2.png)
-
 ![Alt text](data/Linux/权限_3.png)
-![Alt text](权限_4.png)
+![Alt text](data/Linux/权限_4.png)
+### 实例 :
+#### 1.警匪游戏
+![Alt text](data/Linux/permission.png)
+* `su root`  ： 切换至root用户才能添加组和新用户
+* `groupadd police ` ： 加组
+* `groupadd bandit` ： 
+* `useradd -g police jack` ： 加人
+* `useradd -g police jerry` ： 
+* `useradd -g bandit xh` ： 
+* `useradd -g bandit xq` ： 
+* `su jack` ： 切换至jack用户
+* `touch jack.txt`  ： 以jack的身份创建文件
+* `chmod 770 jack.txt`  ： 更改权限
+* `su root` ： 切换至root用户才能添加组和新用户
+* `usermod -g police xh` ： 
+> 注: 当jack在家目录中创建文件时
