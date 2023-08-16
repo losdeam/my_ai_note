@@ -13,6 +13,7 @@
     * 用MobaXterm也能行，还能直接传本地文件
 * 为什么我远程连接不上我的虚拟机
   *  可能是虚拟机ip地址无效(建议ping通了再试)
+  *  可能是虚拟网卡拿错了，![Alt text](data/Linux/error_0.png),如果是使用wifi进行连接的话主要使用带wireless的网卡.
   *  ping通了还不行？还出现下面这样的报错？
     ![Alt text](data/Linux/error_1.png)
         * 你确定你的虚拟机开机了？
