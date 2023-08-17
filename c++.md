@@ -334,6 +334,7 @@ ____
     cout << strlen(lis)<<endl;  // 2 
     cout << sizeof(lis)<<endl;  // 7
 ```
+
 ##### cin的缺陷
 &emsp;&emsp;在输入字符串时`cin`函数以**空白**(**空格**、**制表符**和**换行符**)来确认字符串的结束位置。所以在输入的过程中无法输入空格(输入空格后会将后续内容存储至下一次输入中或者丢弃)。
 
@@ -343,18 +344,90 @@ ____
 ```
 
 ##### getline()
-&emsp;&emsp;保存于头文件`<istream>`中,通过回车键输入的换行符来确认输入结尾。该函数有两个参数，第一个参数用于存储输入行的数组的名称，第二个参数是要读取的字符数。超过读取数或是遇到换行符时停止读取。
+&emsp;&emsp;保存于头文件`<iostream>`中,通过回车键输入的换行符来确认输入结尾。该函数有两个参数，第一个参数用于存储输入行的数组的名称，第二个参数是要读取的字符数。超过读取数或是遇到换行符时停止读取。
 
 ```c++
-    cin.getline(name,20) //将该行的输入读取入name数组中，最大字符获取量为20
+    cin.getline(name,20); //将该行的输入读取入name数组中，最大字符获取量为20
+```
+##### get()
+&emsp;&emsp;保存于头文件`<iostream>`中,与`getline`相似但是不再读取并丢弃换行符，而是将其留在输入队列中。
+```c++
+    cin.get(name,20); //将该行的输入读取入name数组中，最大字符获取量为20
+```
+&emsp;&emsp;但是有个问题就是当遇到换行符时，get函数依然不会跳出。幸运的是get有个好用的变体get()。它可以获得下一行字符(即使是换行符)
+```c++
+    cin.get(name,20);
+    cin.get();
+```
+&emsp;&emsp;还有一种好用的方法就是把两者直接进行结合
+```c++
+    cin.get(name,20).get();
 ```
 
+____
+
+### String 
+&emsp;&emsp;C++添加了`String`类使得对字符串的操作能够更加容易。要使用`String`类时，必须先声明头文件`<string>`,并且使用名称空间std。其特点在于可以**声明为简单变量而非数组**。
+```c++
+    string str1 ;
+    string str2 = "test";
+```
+___
+### 结构
+&emsp;&emsp;类似于`python`中的类，其中关键字`struct`声明了后续为一个名字为`test`的结构。`test`结构拥有`name`和`num`两个结构成员.
+```c++
+    struct test{
+        char name[20];
+        int num ;
+    };
+    test name {"losdeam",10}; 
+    test name_1 {};
+```
+> 注：不允许缩窄转换
+___
+### 共用体
+&emsp;&emsp;共用体在声明时会**按照最大的成员进行内存的分配**，而在使用时可以自由的使用所有成员类型，但是**同时仅能使用一种**(使用**同一物理地址**)。
+```c++
+    union one4all
+    {
+        int int_val;
+        long long_val;
+        double double_val;
+    };
+    one4all pail;
+    pail.int_val = 15; //pail中保存int_val
+    pail.double_val = 1.38; //pail.int_val被pail.double_val覆盖
+
+```
+___
+### 枚举
+```c++
+    enum spectrum {red,orange,yellow,green,blue};
+```
+这条语句完成以下两项工作:
+* `spectrum`被称为枚举
+* `red`,`orange`,`yellow`等作为符号常量,对应整数值为0~4。这些常量叫做`枚举量`
+  
+当后续使用red,orange,yellow等时将会直接被转换为整数值。当然直接赋值也是可以的。
+```c++
+    enum spectrum {red=1,orange=8,yellow=5,green=7,blue=3};
+    enum spectrum {red=1,orange,yellow,green=7,blue=3};
+```
+____
+## 指针
+&emsp;&emsp;指针是c++中极为重要(~~折磨~~)的一种变量类型。由于储存值的地址而非值本身。其中&用于直接获取变量的地址，*应用于指针以获取指针处保存的值
+```c++
+    int num = 6;
+    int * address ;
+    address = &num; // address中保存num的地址值
+    cout << *address ; //输出num值(6)
+```
 
 ____
 ## C++的语句
 
 ### cout
-&emsp;&emsp;保存于头文件`<istream>`中,`cout`是c++中常见的**输出方式**,与`printf`不同的是,`cout`利用了重载的方式使得其能自由的输出数据而不需要用户自行对输出数据的类型进行定义。
+&emsp;&emsp;保存于头文件`<iostream>`中,`cout`是c++中常见的**输出方式**,与`printf`不同的是,`cout`利用了重载的方式使得其能自由的输出数据而不需要用户自行对输出数据的类型进行定义。
 
 ```c++
 //使用cout不需要知道输出数据的类型
@@ -368,7 +441,7 @@ ____
 ______
 
 ### cin
-&emsp;&emsp;保存于头文件`<istream>`中,`cin`是c++中常见的**输入方式**,与`cout`相同，`cin`也是智能对象，能自由的输出数据而不需要用户自行对输出数据的类型进行定义。
+&emsp;&emsp;保存于头文件`<iostream>`中,`cin`是c++中常见的**输入方式**,与`cout`相同，`cin`也是智能对象，能自由的输出数据而不需要用户自行对输出数据的类型进行定义。
 
 ```c++
 int a ;
@@ -385,7 +458,7 @@ char b ;
 
 ___
 ### sizeof
-&emsp;&emsp;保存于头文件`<istream>`中,`sizeof`常用于获取对应数据类型所占的数据长度(单位为**字节**)
+&emsp;&emsp;保存于头文件`<iostream>`中,`sizeof`常用于获取对应数据类型所占的数据长度(单位为**字节**)
 
 ```c++
 cout << "int is " << sizeof(int) << "bytes" <<endl; // int is 4 bytes
