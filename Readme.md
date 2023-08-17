@@ -64,3 +64,5 @@ ___
 * [魔搭平台](https://modelscope.cn/my/overview)，阿里的一个ai平台，上面项目还是很多的，可以多看看。
 ![Alt text](data/Readme/modelscope.png)
 * yolo , 图像识别巨头，而且在csdn上有着丰富的教程。完全支持小白的学习
+____
+&emsp; &emsp;和程序相关的一切基本就主打一个多练，自己上手试试比看几节课来的深刻的多
