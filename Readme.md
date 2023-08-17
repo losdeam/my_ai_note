@@ -35,6 +35,10 @@ ___
 * [csdn](https://www.csdn.net/)，遇事不决搜一下
   ___
 ## 学习建议
+&emsp; &emsp;我也没法给太多的建议，可以参考参考下面的几位
+- [Ai-Learn](https://github.com/tangyudi/Ai-Learn)
+- [Python2AI](https://github.com/Microstrong0305/Python2AI)
+
 ### 机器学习&深度学习
 * [跟李沐学AI](https://space.bilibili.com/1567748478?spm_id_from=333.337.0.0)，机器学习和深度学习的大佬，讲解的还是很不错的
 * 吴恩达，找不到主页了，但是课很不错
