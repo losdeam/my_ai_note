@@ -305,7 +305,7 @@ ____
 ![Alt text](data/Linux/权限_4.png)
 ### 实例 :
 #### 1.警匪游戏
-![Alt text](data/Linux/permission.png)
+![Alt text](data/Linux/permission_1.png)
 * `su root`  ： 切换至root用户才能添加组和新用户
 * `groupadd police ` ： 加组
 * `groupadd bandit` ： 
@@ -319,3 +319,12 @@ ____
 * `su root` ： 切换至root用户才能添加组和新用户
 * `usermod -g police xh` ： 
 > 注: 当jack在家目录中创建文件时
+
+## 任务调度
+![Alt text](data/Linux/crond_1.png)
+![Alt text](data/Linux/crond_2.png)
+
+> 注意/1后*前均存在空格
+
+![Alt text](data/Linux/crond_3.png)
+![Alt text](data/Linux/crond_4.png)
