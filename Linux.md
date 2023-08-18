@@ -2,7 +2,7 @@
 # Linux部分
 在b站上跟随[【小白入门 通俗易懂】2021韩顺平 一周学会Linux](https://www.bilibili.com/video/BV1Sv411r7vd/?spm_id_from=333.337.search-card.all.click&vd_source=3b0e33a626cf5e45835cac5d91093908)开始进行Linux的学习
 
-## 常见问题
+## 1.常见问题
 * vmware在使用一段时间后就卡死
     * 可能是虚拟机的内存给小了或者处理器给少了
     * 可能是虚拟机在下载的时候出现损坏？
@@ -18,7 +18,7 @@
     ![Alt text](data/Linux/error_1.png)
         * 你确定你的虚拟机开机了？
 
-## 远程连接
+## 2.远程连接
 1. 在虚拟机中连接上网
 2. 通过`ifconfig`指令获取虚拟机的ip地址(不联网的话是拿不到ip地址的)
    ![Alt text](data/Linux/ifconfig.png)
@@ -29,12 +29,12 @@
 ![Alt text](data/Linux/login.png)
 6. 在登录后就可以正常使用虚拟机了(当然,只有命令行没有桌面)
 
-## Vim
+## 3.Vim
 ___
-### 简介
+### 3.1 简介
 &emsp; Vi是Linux和Unix系统上最基本的文本编辑器,而Vim可以看做是Vi的增强版本，可以主动以字体颜色辨别语法的正确性
 
-### 使用指南
+### 3.2 使用指南
 &emsp; Vim有三种常见的模式
 1. 正常模式
 &emsp;  打开文档后的默认模式，可以通过移动光标来实现定位，并通过指令进行复制与删除操作
@@ -43,7 +43,7 @@ ___
 3. 命令行模式
 &emsp;  在插入模式下通过输入esc返回正常模式后再输入:进入，在此模式下可以通过指令来实现文档的保存与退出
 
-### 常见指令
+### 3.3 常见指令
 正常模式下
 > * `yy` :拷贝当前行
 > * `nyy`:拷贝当前行向下的`n`行 
@@ -62,9 +62,9 @@ ___
 >`:q!` :不保存退出(不保存已有更改)
 
 ____
-## shell指令大全(实操篇)
+## 4.shell指令大全(实操篇)
 
-### 关机&重启命令
+### 4.1 关机&重启命令
 * `shutdown -h now` : 立刻关机
 * `shutdown -h 1`   : 一分钟后执行关机
 * `shutdown -r now` : 立刻重启
@@ -73,11 +73,11 @@ ____
 * `reboot` :  立刻重启
 * `sync` : 把内存的数据同步到磁盘
 ___
-### 用户登录登出
+### 4.2 用户登录登出
 * `logout` : 注销当前用户
 * `su - 用户名` : 尝试切换至另一用户，有密码则需输入密码
 ___
-### 用户管理
+### 4.3 用户管理
 * `useradd 用户名` : 添加一个用户
 * `passwd 用户名` : 给用户指定密码
 注：当密码过于简单时会出现这样的报错信息，但是可以不用管，在第二次确认后一样能用!
@@ -87,14 +87,14 @@ ___
 * `id 用户名` : 查询用户的信息
 * `whoami/who am i` : 查看当前用户
 ___
-### 用户组
+### 4.4 用户组
 &emsp;  将用户进行分类,并对同组用户进行统一的管理
 * `groupadd 组名` : 新增组
 * `groupdel 组名` : 删除组
 * `useradd -g 用户组 用户名` : 在新增用户时直接加入组
 * `usermod -g 用户组 用户名` : 修改用户的组
 ___
-#### 相关文件
+#### 4.4.1 相关文件
 
 * `/etc/passwd` : 用户的配置文件，记录用户的信息
   ![Alt text](data/Linux/userconfig_1.png)
@@ -111,7 +111,7 @@ ______
 
 内容含义 :`组名:口令:组标识号:组内用户列表`
 ___
-### 指定运行级别
+### 4.5 指定运行级别
 &emsp; Linux中有着7个运行级别分别是
 * `0` : 关机
 *  `1` : 单用户[找回丢失密码]
@@ -130,7 +130,7 @@ ___
 * `systemctl set-default multi-user.target` : 设置默认运行级别为多用户模式
 ______
 
-### [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
+### 4.6 [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
 (centos7和centos8的方式不太一样，下文是另一教程的总结与实践，原文请点击标题处)
 1. 重启虚拟机，在出现以下页面时快速移动光标，防止自动登录
 ![Alt text](data/Linux/rootpw_1.png)
@@ -152,11 +152,11 @@ ______
 8. 输入`passwd`以进行新密码的设置
 9. 输入`exit` 以退出sysroot 再输入`reboot`进行重启(重启时间可能会有点久)
 ____
-### 帮助指令
+### 4.7 帮助指令
 * `man [命令或配置文件]` : 查看命令的帮助信息
 * `help` : 获得shell内置命令的帮助信息
 ______
-### 文件目录类
+### 4.8 文件目录类
 * `pwd` : 显示当前工作目录的绝对路径
 * `ls [选项] [目录]`
   > 常用选项
@@ -181,7 +181,7 @@ ______
 * `mv [文件1] [文件名2]` : 将文件1的文件名修改为文件名2
 * `mv [目录1] [目录2]` : 将目录1中文件移动到目录2中
 ___
-### 查看类
+### 4.9 查看类
 * `cat [选项] 要查看的文件` : 查看指定文件内容
   > * `-n` : 显示行号
 * `more` : 按全屏幕的方式按页显示文本文件的内容，其中内置了若干快捷键
@@ -217,7 +217,7 @@ ___
 
 ![Alt text](data/Linux/less.png)
 ___
-#### 分屏和全屏的区别
+#### 4.9.1 分屏和全屏的区别
 &emsp;&emsp;全屏查看是将**文件全部读取完成后再进行显示**而分屏查看是**根据显示的需要逐步加载内容**。分屏查看在显示大型文件方面具有较高的效率。
 ___
 * `echo [选项] [输出内容]` : 输出内容到控制台(可用于输出环境变量与用户名)
@@ -238,7 +238,7 @@ ___
   * `!n` : 执行历史编号为n的指令
   ![Alt text](data/Linux/history.png)
 ______
-### 时间日期类
+### 4.10 时间日期类
 * `date` : 显示时间 
     1. `date` ：显示当时时间
     2. `date %Y` : 显示当前年份
@@ -252,7 +252,7 @@ ______
     * `cal n` ： 显示n年日历
     ![Alt text](data/Linux/cal_2.png)
 ____
-### 搜索查找类
+### 4.11 搜索查找类
 * `find [搜索范围] [选项]` : 将指定目录向下递归地遍历其各个子目录,将满足条件的文件或者目录显示在终端
   * `-name [查询方式]` : 按照指定的文件名查找文件
   * `-user [用户名]` : 查找属于指定用户名的所有文件
@@ -264,7 +264,7 @@ ____
 * `|` : 将前一个命令的处理结果输出给后面的命令处理
     ![Alt text](data/Linux/grep.png)
 ___
-### 压缩/解压缩类
+### 4.12 压缩/解压缩类
 * `gzip 文件` ： 压缩文件，只能将文件压缩为*.gz文件
 * `gunzip 文件.gz` : 解压缩文件
 &emsp;
@@ -284,7 +284,7 @@ ___
   ![Alt text](data/Linux/tar.png)
 ____
 
-## 权限管理
+## 5.权限管理
   &emsp;  &emsp;Linux中文件都是有归属的，通常情况下，文件属于该文件的创建者。也属于创建者所在的组
   * ` ls -ahl `: 显示当前文件夹下所有文件的所有者
 
@@ -303,8 +303,8 @@ ____
 ![Alt text](data/Linux/权限_2.png)
 ![Alt text](data/Linux/权限_3.png)
 ![Alt text](data/Linux/权限_4.png)
-### 实例 :
-#### 1.警匪游戏
+### 5.1实例 :
+#### 5.1.1 警匪游戏
 ![Alt text](data/Linux/permission_1.png)
 * `su root`  ： 切换至root用户才能添加组和新用户
 * `groupadd police ` ： 加组
@@ -320,7 +320,7 @@ ____
 * `usermod -g police xh` ： 
 > 注: 当jack在家目录中创建文件时
 
-## 任务调度
+## 6.任务调度
 ![Alt text](data/Linux/crond_1.png)
 ![Alt text](data/Linux/crond_2.png)
 
@@ -330,9 +330,9 @@ ____
 ![Alt text](data/Linux/crond_4.png)
 ![Alt text](data/Linux/crond_5.png)
 
-## 定时任务
+## 7.定时任务
 ![Alt text](data/Linux/at_1.png)
 ![Alt text](data/Linux/at_2.png)
 ![Alt text](data/Linux/at_3.png)
-### 实例
+### 7.1实例
 ![Alt text](data/Linux/at_4.png)
