@@ -319,7 +319,7 @@ ____
 * `su root` ： 切换至root用户才能添加组和新用户
 * `usermod -g police xh` ： 
 > 注: 当jack在家目录中创建文件时
-
+___
 ## 6.任务调度
 ![Alt text](data/Linux/crond_1.png)
 ![Alt text](data/Linux/crond_2.png)
@@ -329,10 +329,70 @@ ____
 ![Alt text](data/Linux/crond_3.png)
 ![Alt text](data/Linux/crond_4.png)
 ![Alt text](data/Linux/crond_5.png)
-
+____
 ## 7.定时任务
 ![Alt text](data/Linux/at_1.png)
 ![Alt text](data/Linux/at_2.png)
 ![Alt text](data/Linux/at_3.png)
 ### 7.1实例
 ![Alt text](data/Linux/at_4.png)
+___
+## 8.磁盘分区
+![Alt text](lsblk_1.png)
+![Alt text](lsblk_2.png)
+![Alt text](lsblk_3.png)
+![Alt text](lsblk_4.png)
+### 8.1 案例
+![Alt text](lsblk_5.png)
+ &emsp;  &emsp;由于此处VirtualBox与Vmware差距较大，故开始采用手动记录。
+1. 添加磁盘
+1.1 在virtualbox的主界面中选择虚拟机的设置
+
+![Alt text](lsblk_6.png)
+
+1.2 点击储存选项后选择对应的控制器(**下方存在虚拟机名字的控制器**)
+
+![Alt text](lsblk_7.png)
+
+1.3 选择添加虚拟硬盘(如果无法进行操作建议先关闭虚拟机)
+   
+![Alt text](lsblk_8.png)
+
+1.4 点击创建
+   
+![Alt text](lsblk_9.png)
+
+1.5 随后选择自己想要安装的目录与对应的大小即可
+   
+![Alt text](lsblk_10.png)
+![Alt text](lsblk_11.png)
+
+1.6 重新打开虚拟机，输入`lsblk`,可以看到已经完成了虚拟硬盘的添加
+
+![Alt text](lsblk_12.png)
+
+2. 分区
+
+![Alt text](lsblk_13.png)
+
+2.1 进入分区指令
+
+![Alt text](lsblk_14.png)
+
+2.2 创建新的分区(分区号为分区的个数)
+
+![Alt text](lsblk_15.png)
+
+2.3 保存分区操作
+
+![Alt text](lsblk_16.png)
+未经格式化的磁盘分区不存在uuid，无法被使用。
+![Alt text](lsblk_17.png)
+
+3. 格式化磁盘
+   
+![Alt text](lsblk_18.png)
+
+3.1 进行
+
+![Alt text](lsblk_19.png)
