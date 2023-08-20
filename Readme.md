@@ -33,6 +33,7 @@ ___
 * [github](https://github.com/),世界上最大的~~同性~~程序员交友网站
 * [gitee](https://gitee.com/explore)，中国版的github，目前还是有不少公司在用的
 * [csdn](https://www.csdn.net/)，遇事不决搜一下
+* [天池](https://tianchi.aliyun.com/)，阿里的竞赛平台，有着大量的学习资料和比赛项目。可以试着边学习边打比赛赚钱。
   ___
 ## 学习建议
 &emsp; &emsp;我也没法给太多的建议，可以参考参考下面的几位
