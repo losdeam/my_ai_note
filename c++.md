@@ -463,7 +463,7 @@ int main()
 
 &emsp;&emsp;所以`delete`后要注意释放指针对内存块的占用(手动指向`NuLL`或是其他内存块),以免产生一些奇奇怪怪的bug
 ### 5.2 动态数组
-&emsp;&emsp;使用括号与`new`、`delete`函数可以快速建立/释放一个动态数组。
+&emsp;&emsp;使用括号与`new`、`delete`函数可以快速建立/释放一个动态数组。(动态指的是)
 ```c++
     type_name * pointer_name = new type_name [num_elements];  //创建动态数组
     delete [] pointer_name; //释放动态数组
@@ -483,7 +483,20 @@ int main()
     ps[0]= 5 ;
 ```
 
+### 5.3 指针算术
+&emsp;&emsp;对指针执行加减操作时，将会以其所指向的格式类型的字节数为单位进行移动。
+```c++
+    int * ps = new int [3];
+    ps[1] = 2;
+    cout<< ps  <<endl;      // 0x2692820        
+    cout<< ps[1]  <<endl;   // 2
+    cout<< ++ps <<endl;     // 0x2692824   
+    cout<< ps[0]  <<endl;   // 2
+```
+### 5.4 动态结构
+
 ____
+
 ## 6.C++的语句
 
 ### 6.1 cout
