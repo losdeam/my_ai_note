@@ -337,62 +337,99 @@ ____
 ### 7.1实例
 ![Alt text](data/Linux/at_4.png)
 ___
-## 8.磁盘分区
-![Alt text](lsblk_1.png)
-![Alt text](lsblk_2.png)
-![Alt text](lsblk_3.png)
-![Alt text](lsblk_4.png)
-### 8.1 案例
-![Alt text](lsblk_5.png)
+## 8.磁盘
+### 8.1 磁盘分区
+
+![Alt text](data/Linux/lsblk_1.png)
+![Alt text](data/Linux/lsblk_2.png)
+![Alt text](data/Linux/lsblk_3.png)
+![Alt text](data/Linux/lsblk_4.png)
+#### 8.1.1 案例
+![Alt text](data/Linux/lsblk_5.png)
  &emsp;  &emsp;由于此处VirtualBox与Vmware差距较大，故开始采用手动记录。
 1. 添加磁盘
 1.1 在virtualbox的主界面中选择虚拟机的设置
 
-![Alt text](lsblk_6.png)
+![Alt text](data/Linux/lsblk_6.png)
 
 1.2 点击储存选项后选择对应的控制器(**下方存在虚拟机名字的控制器**)
 
-![Alt text](lsblk_7.png)
+![Alt text](data/Linux/lsblk_7.png)
 
 1.3 选择添加虚拟硬盘(如果无法进行操作建议先关闭虚拟机)
    
-![Alt text](lsblk_8.png)
+![Alt text](data/Linux/lsblk_8.png)
 
 1.4 点击创建
    
-![Alt text](lsblk_9.png)
+![Alt text](data/Linux/lsblk_9.png)
 
 1.5 随后选择自己想要安装的目录与对应的大小即可
    
-![Alt text](lsblk_10.png)
-![Alt text](lsblk_11.png)
+![Alt text](data/Linux/lsblk_10.png)
+![Alt text](data/Linux/lsblk_11.png)
 
 1.6 重新打开虚拟机，输入`lsblk`,可以看到已经完成了虚拟硬盘的添加
 
-![Alt text](lsblk_12.png)
+![Alt text](data/Linux/lsblk_12.png)
 
 2. 分区
 
-![Alt text](lsblk_13.png)
+![Alt text](data/Linux/lsblk_13.png)
 
 2.1 进入分区指令
 
-![Alt text](lsblk_14.png)
+![Alt text](data/Linux/lsblk_14.png)
 
 2.2 创建新的分区(分区号为分区的个数)
 
-![Alt text](lsblk_15.png)
+![Alt text](data/Linux/lsblk_15.png)
 
 2.3 保存分区操作
 
-![Alt text](lsblk_16.png)
+![Alt text](data/Linux/lsblk_16.png)
 未经格式化的磁盘分区不存在uuid，无法被使用。
-![Alt text](lsblk_17.png)
+![Alt text](data/Linux/lsblk_17.png)
 
-3. 格式化磁盘
+3. 挂载磁盘
    
-![Alt text](lsblk_18.png)
+![Alt text](data/Linux/lsblk_18.png)
 
-3.1 进行
+3.1 进行格式化
 
-![Alt text](lsblk_19.png)
+![Alt text](data/Linux/lsblk_19.png)
+![Alt text](data/Linux/lsblk_20.png)
+
+3.2 进行挂载
+
+![Alt text](data/Linux/lsblk_21.png)
+ &emsp;  &emsp;在挂载完成后如果向挂载目录添加文件，则实际存储位置是在磁盘上。而且使用命令行进行挂载时在重启后，挂载会消失。
+
+
+3.3 取消挂载
+
+![Alt text](data/Linux/lsblk_22.png)
+注意，需要退出被挂载目录后才能取消挂载
+
+4. 永久挂载
+  **所有永久性的操作前均建议进行一波快照**，一步一存档，主打的就是一个稳健。
+
+![Alt text](data/Linux/lsblk_23.png)
+
+ &emsp;  &emsp;进入/etc/fstab，按照已有磁盘的格式添加需要挂载的磁盘
+![Alt text](data/Linux/lsblk_24.png)
+ &emsp;  &emsp;重启后即可看到实现了挂载
+ ![Alt text](data/Linux/lsblk_25.png)
+## 8.2 磁盘使用情况查询
+### 8.2.1 系统整体磁盘
+![Alttext](data/Linux/disk_1.png)
+![Alt text](data/Linux/disk_2.png)
+
+### 8.2.2 指定目录磁盘
+![Alt text](data/Linux/disk_3.png)
+
+### 8.2.3 实例
+ ![Alt text](data/Linux/disk_4.png)
+
+
+## 9.网络配置
