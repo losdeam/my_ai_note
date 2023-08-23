@@ -552,7 +552,7 @@ char * getname()
 * 疑问：
 &emsp;&emsp;为什么要多走一步把temp赋值给pn呢，直接用temp不好吗
 然后就出现了这样的报错
-![Alt text](image.png)
+![Alt text](data/C++/动态数组_error_1.png)
 * 分析：
   &emsp;&emsp;temp是在使用getname函数时`自动存储`的变量，在函数结束后将会自动释放。*不清楚自动存储是啥意思没事等下就知道是啥了*。如果这时我们使用temp作为返回值的话，返回的就是一个不存在的地址。自然就报错了
 
