@@ -14,3 +14,60 @@ ____
 此时img中保存的为`nparray `多维数组。这意味着可以对其进行常见的矩阵操作。同时图片的格式也不止局限于`.jpg`,还支持`.tif`,`.bmp`,`.png`等多种格式(当输入四通道图片时则数组的通道数也是4)
 
 * `VideoCapture`是opencv中最为常见的`视频读取`方式
+```python
+    video = cv2.VideoCapture("video_path/test.mp4")
+```
+此时video是一种特殊的类型，我们可以使用isOpened()函数来确认视频流是否能够被打开
+```python
+    flag = video.isOpened()
+```
+此时flag中保存的是video能否被打开的布尔值。
+
+要获取视频流中具体的图像数据需要使用read函数
+```python
+    ret,frame = video.read()
+```
+其中`ret`是`video`获取的成功与否，`frame`则是该帧的图像数据，与`imread`中所获取的相同。
+`VideoCapture`还有一种有趣的也是最为常用的用法
+```python
+    video = cv2.VideoCapture(0)
+```
+此时`VideoCapture`将会自动获取本机的摄像头进行拍摄。当然可以是1，2，3等等(前提是你有这么多的摄像头)。
+需要注意的是，opencv中所有的函数都或多或少的存在大小写，而当格式不正确时，python便无法识别对应的函数
+
+##### 1.1.2.2 输出
+* `imwrite`是`opencv`中最为常见的`图像保存`方式
+```python
+    flag = cv2.imwrite("test.jpg",img,paras)
+```    
+> * `img`        : 需要保存的图像数组
+> * `"test.jpg"` : 保存后的图像名称与格式
+> * `flag`(选填) : 返回是否保存成功
+> * `paras`(选填) : 不同的编码格式参数
+>   - cv2.CV_IMWRITE_JPEG_QUALITY：设置 .jpeg/.jpg 格式的图片质量，取值为 0-100（默认值 95），数值越大则图片质量越高；
+>   - cv2.CV_IMWRITE_WEBP_QUALITY：设置 .webp 格式的图片质量，取值为 0-100；
+>   - cv2.CV_IMWRITE_PNG_COMPRESSION：设置 .png 格式图片的压缩比，取值为 0-9（默认值 3），数值越大则压缩比越大。
+
+需要注意的是opencv并不支持在输出中使用中文(会出现乱码)，如果真的想使用中文可以使用`imencode`函数
+
+* `VideoWriter`是`opencv`中最为常见的`视频保存`方式
+```python
+    VideoWriter(filename, fourcc, fps, frameSize[, isColor])
+```
+> filename : 保存的文件路径
+> fourcc : 所选择的编码器
+> fps   : 要保存视频的帧率
+> frameSize : 待保存视频的画面尺寸
+> isColor : 指示画面是否为彩色图像
+注意此时**VideoWriter并不是一个能够返回值的函数**，而是一个**类**。需要**在声明类后，使用成员函数write来保存对应的帧**
+```python
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('testwrite.avi',fourcc, 20.0, (1920,1080),True)
+...
+out.write(frame)
+...
+out.release()
+```
+
+##### 1.1.2.3 等待
+* `waitkey` 
