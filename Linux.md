@@ -434,6 +434,31 @@ ___
 
 ## 9.网络配置
 2023/8/22 手机充电线没带，公司网无法直连虚拟机，需要手机热点作为转接。暂且跳过
+### 9.1 自动获取
+ &emsp;&emsp; 在登录后根据网络情况自动获取ip，每次自动获取的ip地址可能不同
+![Alt text](network_1.png)
+### 9.2 指定ip
+&emsp;&emsp; 直接修改配置文件来指定ip，并可优化连接到外网。
+* 编辑 /etc/sysconfig/network-scripts/ifcfg-ens33
+  
+&emsp;&emsp; **ifcfg-ens33 文件说明**
+>  DEVICE=eth0  #接口名(设备，网卡)
+  HWADDR = 00:0c:2x:6x:0x:xx #MAC地址
+  TYPE = Ethernt # 网络类型(通常是Ethemet)
+  UUID = 926 ........       #随机id
+  #系统启动的时候网络接口是否有效(yes/no)
+  ONBOOT =yes
+  #IP的配置方式`[none|static|bootp|dhcp]`
+  BOOTPROTO = static
+  #IP地址
+  IPADDR = 192.168.200.130
+  #网关
+  GATEWAY = 192.168.200.2
+  #域名解析器
+  DN51 = 192.168.200.2
+
+
+![Alt text](network_2.png)
 
 ## 10.进程管理
 ![Alt text](data/Linux/process_1.png)
