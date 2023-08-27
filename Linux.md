@@ -433,11 +433,11 @@ ___
 
 
 ## 9.网络配置
-2023/8/22 手机充电线没带，公司网无法直连虚拟机，需要手机热点作为转接。暂且跳过
-### 9.1 自动获取
+### 9.1 配置ip地址
+#### 9.1.1 自动获取
  &emsp;&emsp; 在登录后根据网络情况自动获取ip，每次自动获取的ip地址可能不同
-![Alt text](network_1.png)
-### 9.2 指定ip
+![Alt text](data/Linux/network_1.png)
+#### 9.1.2 指定ip
 &emsp;&emsp; 直接修改配置文件来指定ip，并可优化连接到外网。
 * 编辑 /etc/sysconfig/network-scripts/ifcfg-ens33
   
@@ -457,8 +457,21 @@ ___
   #域名解析器
   DN51 = 192.168.200.2
 
+![Alt text](data/Linux/network_2.png)
 
-![Alt text](network_2.png)
+当然，操作要在进行重启(`reboot`)后才可以生效。
+### 9.2 设置主机名和hosts映射
+#### 9.2.1 主机名
+* `hostname` : 查看当前主机名
+  
+![Alt text](data/Linux/network_3.png)
+
+* 在/etc/hostname中进行修改
+
+![Alt text](data/Linux/network_4.png)
+
+当然，依旧是重启后才能生效
+#### 9.2.2 hosts映射
 
 ## 10.进程管理
 ![Alt text](data/Linux/process_1.png)
