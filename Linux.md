@@ -472,7 +472,28 @@ ___
 
 当然，依旧是重启后才能生效
 #### 9.2.2 hosts映射
+在日常使用时，我们通常使用主机名来指代ip地址
+但是在如果我们真的在命令中使用主机名来指代ip地址的话会出现这样的错误
 
+![Alt text](data/Linux/host_1.png)
+所以需要进行下面的操作(设置主机名与host映射)
+![Alt text](data/Linux/host_2.png)
+1. 寻找本机的host文件
+   
+![Alt text](data/Linux/host_3.png)
+2. 往里头添加自己的主机名与对应的ip地址
+   
+![Alt text](data/Linux/host_4.png)
+3. 成了
+   
+![Alt text](data/Linux/host_5.png)
+
+当然linux下也是同理
+
+![Alt text](data/Linux/host_6.png)
+
+#### 9.2.3 DNS(域名系统)
+![Alt text](data/Linux/host_7.png)
 ## 10.进程管理
 ![Alt text](data/Linux/process_1.png)
 ![Alt text](data/Linux/process_2.png)
@@ -485,3 +506,6 @@ ___
 ![Alt text](data/Linux/ps_5.png)
 ![Alt text](data/Linux/ps_6.png)
 * `PPID` 为当前进程的父进程的`pid`
+
+### 10.2 终止进程
+![Alt text](data/Linux/kill_1.png)
