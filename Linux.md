@@ -13,20 +13,20 @@
     * 用MobaXterm也能行，还能直接传本地文件
 * 为什么我远程连接不上我的虚拟机
   *  可能是虚拟机ip地址无效(建议ping通了再试)
-  *  可能是虚拟网卡拿错了，![Alt text](data/Linux/error_0.png),如果是使用wifi进行连接的话主要使用带`wireless`的网卡.
+  *  可能是虚拟网卡拿错了，![](data/Linux/error_0.png),如果是使用wifi进行连接的话主要使用带`wireless`的网卡.
   *  ping通了还不行？还出现下面这样的报错？
-    ![Alt text](data/Linux/error_1.png)
+    ![](data/Linux/error_1.png)
         * 你确定你的虚拟机开机了？
 
 ## 2.远程连接
 1. 在虚拟机中连接上网
 2. 通过`ifconfig`指令获取虚拟机的ip地址(不联网的话是拿不到ip地址的)
-   ![Alt text](data/Linux/ifconfig.png)
-3. 在本机中通过`ping`指令来确认ip地址的有效性![Alt text](data/Linux/ping.png)
+   ![](data/Linux/ifconfig.png)
+3. 在本机中通过`ping`指令来确认ip地址的有效性![](data/Linux/ping.png)
 4. 确认ip地址的有效性后通过MobaXterm的Session选项来实现SSH显示的远程连接。
- ![Alt text](data/Linux/MobaXterm_1.png)
+ ![](data/Linux/MobaXterm_1.png)
 5. 将获取到的虚拟机ip地址填入Remote host中即可实现
-![Alt text](data/Linux/login.png)
+![](data/Linux/login.png)
 6. 在登录后就可以正常使用虚拟机了(当然,只有命令行没有桌面)
 
 ## 3.Vim
@@ -81,7 +81,7 @@ ___
 * `useradd 用户名` : 添加一个用户
 * `passwd 用户名` : 给用户指定密码
 注：当密码过于简单时会出现这样的报错信息，但是可以不用管，在第二次确认后一样能用!
-![Alt text](data/Linux/error_2.png)
+![](data/Linux/error_2.png)
 * `userdel 用户名` : 删除用户但保留其家目录
 * `userdel -r 用户名` : 删除用户及其家目录
 * `id 用户名` : 查询用户的信息
@@ -97,17 +97,17 @@ ___
 #### 4.4.1 相关文件
 
 * `/etc/passwd` : 用户的配置文件，记录用户的信息
-  ![Alt text](data/Linux/userconfig_1.png)
+  ![](data/Linux/userconfig_1.png)
 
 内容含义 : `用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell`
 ______
 * `/etc/shadow` : 用户口令的配置文件
-  ![Alt text](data/Linux/userconfig_2.png)
+  ![](data/Linux/userconfig_2.png)
 
 内容含义 : `登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标识`
 ______
 * `/etc/group` : 组的配置文件,记录Linux包含的组的信息
-![Alt text](data/Linux/userconfig_3.png)
+![](data/Linux/userconfig_3.png)
 
 内容含义 :`组名:口令:组标识号:组内用户列表`
 ___
@@ -115,14 +115,14 @@ ___
 &emsp; Linux中有着7个运行级别分别是
 * `0` : 关机
 *  `1` : 单用户[找回丢失密码]
-![Alt text](data/Linux/init_1.png)
+![](data/Linux/init_1.png)
 * `2` : 多用户状态没有网络服务
-![Alt text](data/Linux/init_2.png)
+![](data/Linux/init_2.png)
 * `3` : 多用户状态有网络服务
-![Alt text](data/Linux/init_3.png)
+![](data/Linux/init_3.png)
 * `4` : 安全模式
 * `5` : 图形界面
-![Alt text](data/Linux/init_5.png)
+![](data/Linux/init_5.png)
 * `6` : 系统重启
 使用`init`命令可以实现不同运行级别的切换(仅root用户可以)
 
@@ -133,14 +133,14 @@ ______
 ### 4.6 [root用户找回密码](https://blog.csdn.net/shenzhi0518/article/details/124091254?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169173440016800215012329%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=169173440016800215012329&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-124091254-null-null.142^v92^chatsearchT3_1&utm_term=centos%208%20%E5%A6%82%E4%BD%95%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81&spm=1018.2226.3001.4187)
 (centos7和centos8的方式不太一样，下文是另一教程的总结与实践，原文请点击标题处)
 1. 重启虚拟机，在出现以下页面时快速移动光标，防止自动登录
-![Alt text](data/Linux/rootpw_1.png)
+![](data/Linux/rootpw_1.png)
 
 2. 界面保持后按下键盘`e`键进入以下界面
-![Alt text](data/Linux/rootpw_2.png)
+![](data/Linux/rootpw_2.png)
 
 3. 找到`linux`开头`quiet`结尾的行尾输入`空格+rd.break`,然后键盘按`ctrl+x` 进入紧急救援模式
-![Alt text](data/Linux/rootpw_3.png)
-![Alt text](data/Linux/rootpw_4.png)
+![](data/Linux/rootpw_3.png)
+![](data/Linux/rootpw_4.png)
 
 > * 输入`mount`将光标移动到末尾处可以看见`sysroot`是以只读模式挂载的，需要将其转换为读写模式重新挂载
   
@@ -199,7 +199,7 @@ ___
 | = | 输出当前行的行号 |
 |  :f   | 输出文件名和当前行的行号 | 
 
-![Alt text](data/Linux/more.png)
+![](data/Linux/more.png)
 * `less` : 按分屏的方式按页显示文本文件的内容，其中内置了若干快捷键
 &emsp;
 
@@ -215,7 +215,7 @@ ___
 | = | 输出当前行的行号 |
 |  :f   | 输出文件名和当前行的行号 | 
 
-![Alt text](data/Linux/less.png)
+![](data/Linux/less.png)
 ___
 #### 4.9.1 分屏和全屏的区别
 &emsp;&emsp;全屏查看是将**文件全部读取完成后再进行显示**而分屏查看是**根据显示的需要逐步加载内容**。分屏查看在显示大型文件方面具有较高的效率。
@@ -232,11 +232,11 @@ ___
     3. `cat 文件1 > 文件2` : 将文件1的内容覆盖到文件2 
     4. `echo "内容" >> 文件` : 将内容追加到文件中
 * `ln -s [原文件或目录] [软链接名]` : 为原文件创建一个软链接(快捷方式)
-  ![Alt text](data/Linux/ln.png)
+  ![](data/Linux/ln.png)
 * `history` : 查看所有已经执行过的历史命令
   * `history n` ：显示最近使用过的`n`条指令
   * `!n` : 执行历史编号为n的指令
-  ![Alt text](data/Linux/history.png)
+  ![](data/Linux/history.png)
 ______
 ### 4.10 时间日期类
 * `date` : 显示时间 
@@ -244,13 +244,13 @@ ______
     2. `date %Y` : 显示当前年份
     3. `date %m` : 显示当前月份
     4. `date %d` : 显示当前日期
-    ![Alt text](data/Linux/date_1.png)
+    ![](data/Linux/date_1.png)
     5. `date -s 字符串时间` : 设置系统当前时间
-   ![Alt text](data/Linux/date_2.png)
+   ![](data/Linux/date_2.png)
 * `cal [选项]` : 默认显示当月日历
-    ![Alt text](data/Linux/cal_1.png)
+    ![](data/Linux/cal_1.png)
     * `cal n` ： 显示n年日历
-    ![Alt text](data/Linux/cal_2.png)
+    ![](data/Linux/cal_2.png)
 ____
 ### 4.11 搜索查找类
 * `find [搜索范围] [选项]` : 将指定目录向下递归地遍历其各个子目录,将满足条件的文件或者目录显示在终端
@@ -262,7 +262,7 @@ ____
     * `-n` : 显示匹配行及行号
     * `-i` : 忽略字母大小写
 * `|` : 将前一个命令的处理结果输出给后面的命令处理
-    ![Alt text](data/Linux/grep.png)
+    ![](data/Linux/grep.png)
 ___
 ### 4.12 压缩/解压缩类
 * `gzip 文件` ： 压缩文件，只能将文件压缩为*.gz文件
@@ -281,31 +281,31 @@ ___
   * `-f` : 指定压缩后的文件名
   * `-z` : 打包同时压缩
   * `-x` : 解包.tar文件
-  ![Alt text](data/Linux/tar.png)
+  ![](data/Linux/tar.png)
 ____
 
 ## 5.权限管理
   &emsp;  &emsp;Linux中文件都是有归属的，通常情况下，文件属于该文件的创建者。也属于创建者所在的组
   * ` ls -ahl `: 显示当前文件夹下所有文件的所有者
 
-![Alt text](data/Linux/ls-ahl.png)
+![](data/Linux/ls-ahl.png)
 
   * `chown 用户名 文件名` : 修改文件的所有者
      * `-r` : 使得修改对目录下所有文件生效
      * `用户名:组名` : 同时修改所属用户与组
   * `chgrp 组名   文件名` : 修改文件所在的组  
 
-![Alt text](data/Linux/权限_1.png)
+![](data/Linux/权限_1.png)
 > 第0位为`-`表示为普通文件
 > 空格后的数字表示该目录下有多少文件(文件则是文件本身)
 > 在后为所属用户名 ， 所属组名 ， 文件大小 
 >
-![Alt text](data/Linux/权限_2.png)
-![Alt text](data/Linux/权限_3.png)
-![Alt text](data/Linux/权限_4.png)
+![](data/Linux/权限_2.png)
+![](data/Linux/权限_3.png)
+![](data/Linux/权限_4.png)
 ### 5.1实例 :
 #### 5.1.1 警匪游戏
-![Alt text](data/Linux/permission_1.png)
+![](data/Linux/permission_1.png)
 * `su root`  ： 切换至root用户才能添加组和新用户
 * `groupadd police ` ： 加组
 * `groupadd bandit` ： 
@@ -321,122 +321,122 @@ ____
 > 注: 当jack在家目录中创建文件时
 ___
 ## 6.任务调度
-![Alt text](data/Linux/crond_1.png)
-![Alt text](data/Linux/crond_2.png)
+![](data/Linux/crond_1.png)
+![](data/Linux/crond_2.png)
 
 > 注意/1后*前均存在空格
 
-![Alt text](data/Linux/crond_3.png)
-![Alt text](data/Linux/crond_4.png)
-![Alt text](data/Linux/crond_5.png)
+![](data/Linux/crond_3.png)
+![](data/Linux/crond_4.png)
+![](data/Linux/crond_5.png)
 ____
 ## 7.定时任务
-![Alt text](data/Linux/at_1.png)
-![Alt text](data/Linux/at_2.png)
-![Alt text](data/Linux/at_3.png)
+![](data/Linux/at_1.png)
+![](data/Linux/at_2.png)
+![](data/Linux/at_3.png)
 ### 7.1实例
-![Alt text](data/Linux/at_4.png)
+![](data/Linux/at_4.png)
 ___
 ## 8.磁盘
 ### 8.1 磁盘分区
 
-![Alt text](data/Linux/lsblk_1.png)
-![Alt text](data/Linux/lsblk_2.png)
-![Alt text](data/Linux/lsblk_3.png)
-![Alt text](data/Linux/lsblk_4.png)
+![](data/Linux/lsblk_1.png)
+![](data/Linux/lsblk_2.png)
+![](data/Linux/lsblk_3.png)
+![](data/Linux/lsblk_4.png)
 #### 8.1.1 案例
-![Alt text](data/Linux/lsblk_5.png)
+![](data/Linux/lsblk_5.png)
  &emsp;  &emsp;由于此处VirtualBox与Vmware差距较大，故开始采用手动记录。
 1. 添加磁盘
 1.1 在virtualbox的主界面中选择虚拟机的设置
 
-![Alt text](data/Linux/lsblk_6.png)
+![](data/Linux/lsblk_6.png)
 
 1.2 点击储存选项后选择对应的控制器(**下方存在虚拟机名字的控制器**)
 
-![Alt text](data/Linux/lsblk_7.png)
+![](data/Linux/lsblk_7.png)
 
 1.3 选择添加虚拟硬盘(如果无法进行操作建议先关闭虚拟机)
    
-![Alt text](data/Linux/lsblk_8.png)
+![](data/Linux/lsblk_8.png)
 
 1.4 点击创建
    
-![Alt text](data/Linux/lsblk_9.png)
+![](data/Linux/lsblk_9.png)
 
 1.5 随后选择自己想要安装的目录与对应的大小即可
    
-![Alt text](data/Linux/lsblk_10.png)
-![Alt text](data/Linux/lsblk_11.png)
+![](data/Linux/lsblk_10.png)
+![](data/Linux/lsblk_11.png)
 
 1.6 重新打开虚拟机，输入`lsblk`,可以看到已经完成了虚拟硬盘的添加
 
-![Alt text](data/Linux/lsblk_12.png)
+![](data/Linux/lsblk_12.png)
 
 2. 分区
 
-![Alt text](data/Linux/lsblk_13.png)
+![](data/Linux/lsblk_13.png)
 
 2.1 进入分区指令
 
-![Alt text](data/Linux/lsblk_14.png)
+![](data/Linux/lsblk_14.png)
 
 2.2 创建新的分区(分区号为分区的个数)
 
-![Alt text](data/Linux/lsblk_15.png)
+![](data/Linux/lsblk_15.png)
 
 2.3 保存分区操作
 
-![Alt text](data/Linux/lsblk_16.png)
+![](data/Linux/lsblk_16.png)
 未经格式化的磁盘分区不存在uuid，无法被使用。
-![Alt text](data/Linux/lsblk_17.png)
+![](data/Linux/lsblk_17.png)
 
 3. 挂载磁盘
    
-![Alt text](data/Linux/lsblk_18.png)
+![](data/Linux/lsblk_18.png)
 
 3.1 进行格式化
 
-![Alt text](data/Linux/lsblk_19.png)
-![Alt text](data/Linux/lsblk_20.png)
+![](data/Linux/lsblk_19.png)
+![](data/Linux/lsblk_20.png)
 
 3.2 进行挂载
 
-![Alt text](data/Linux/lsblk_21.png)
+![](data/Linux/lsblk_21.png)
  &emsp;  &emsp;在挂载完成后如果向挂载目录添加文件，则实际存储位置是在磁盘上。而且使用命令行进行挂载时在重启后，挂载会消失。
 
 
 3.3 取消挂载
 
-![Alt text](data/Linux/lsblk_22.png)
+![](data/Linux/lsblk_22.png)
 注意，需要退出被挂载目录后才能取消挂载
 
 4. 永久挂载
   **所有永久性的操作前均建议进行一波快照**，一步一存档，主打的就是一个稳健。
 
-![Alt text](data/Linux/lsblk_23.png)
+![](data/Linux/lsblk_23.png)
 
  &emsp;  &emsp;进入/etc/fstab，按照已有磁盘的格式添加需要挂载的磁盘
-![Alt text](data/Linux/lsblk_24.png)
+![](data/Linux/lsblk_24.png)
  &emsp;  &emsp;重启后即可看到实现了挂载
- ![Alt text](data/Linux/lsblk_25.png)
+ ![](data/Linux/lsblk_25.png)
 ## 8.2 磁盘使用情况查询
 ### 8.2.1 系统整体磁盘
 ![Alttext](data/Linux/disk_1.png)
-![Alt text](data/Linux/disk_2.png)
+![](data/Linux/disk_2.png)
 
 ### 8.2.2 指定目录磁盘
-![Alt text](data/Linux/disk_3.png)
+![](data/Linux/disk_3.png)
 
 ### 8.2.3 实例
- ![Alt text](data/Linux/disk_4.png)
+ ![](data/Linux/disk_4.png)
 
 
 ## 9.网络配置
 ### 9.1 配置ip地址
 #### 9.1.1 自动获取
  &emsp;&emsp; 在登录后根据网络情况自动获取ip，每次自动获取的ip地址可能不同
-![Alt text](data/Linux/network_1.png)
+![](data/Linux/network_1.png)
 #### 9.1.2 指定ip
 &emsp;&emsp; 直接修改配置文件来指定ip，并可优化连接到外网。
 * 编辑 /etc/sysconfig/network-scripts/ifcfg-ens33
@@ -457,77 +457,120 @@ ___
   #域名解析器
   DN51 = 192.168.200.2
 
-![Alt text](data/Linux/network_2.png)
+![](data/Linux/network_2.png)
 
 当然，操作要在进行重启(`reboot`)后才可以生效。
 ### 9.2 设置主机名和hosts映射
 #### 9.2.1 主机名
 * `hostname` : 查看当前主机名
   
-![Alt text](data/Linux/network_3.png)
+![](data/Linux/network_3.png)
 
 * 在/etc/hostname中进行修改
 
-![Alt text](data/Linux/network_4.png)
+![](data/Linux/network_4.png)
 
 当然，依旧是重启后才能生效
 #### 9.2.2 hosts映射
 在日常使用时，我们通常使用主机名来指代ip地址
 但是在如果我们真的在命令中使用主机名来指代ip地址的话会出现这样的错误
 
-![Alt text](data/Linux/host_1.png)
+![](data/Linux/host_1.png)
 所以需要进行下面的操作(设置主机名与host映射)
-![Alt text](data/Linux/host_2.png)
+![](data/Linux/host_2.png)
 1. 寻找本机的host文件
    
-![Alt text](data/Linux/host_3.png)
+![](data/Linux/host_3.png)
 2. 往里头添加自己的主机名与对应的ip地址
    
-![Alt text](data/Linux/host_4.png)
+![](data/Linux/host_4.png)
 3. 成了
    
-![Alt text](data/Linux/host_5.png)
+![](data/Linux/host_5.png)
 
 当然linux下也是同理
 
-![Alt text](data/Linux/host_6.png)
+![](data/Linux/host_6.png)
 
 #### 9.2.3 DNS(域名系统)
-![Alt text](data/Linux/host_7.png)
+![](data/Linux/host_7.png)
 ## 10.进程管理
-![Alt text](data/Linux/process_1.png)
-![Alt text](data/Linux/process_2.png)
+![](data/Linux/process_1.png)
+![](data/Linux/process_2.png)
 
 ### 10.1 显示进程
-![Alt text](data/Linux/ps_1.png)
-![Alt text](data/Linux/ps_2.png)
-![Alt text](data/Linux/ps_3.png)
-![Alt text](data/Linux/ps_4.png)
-![Alt text](data/Linux/ps_5.png)
-![Alt text](data/Linux/ps_6.png)
+![](data/Linux/ps_1.png)
+![](data/Linux/ps_2.png)
+![](data/Linux/ps_3.png)
+![](data/Linux/ps_4.png)
+![](data/Linux/ps_5.png)
+![](data/Linux/ps_6.png)
 * `PPID` 为当前进程的父进程的`pid`
 
 ### 10.2 终止进程
-![Alt text](data/Linux/kill_1.png)
+![](data/Linux/kill_1.png)
 
 #### 10.2.1 实例
 1. 小红登录了
-![Alt text](kill_2.png)
+![](data/Linux/kill_2.png)
 2. 管理员发现了并且找到了登录的pid为6253
-![Alt text](kill_3.png)
+![](data/Linux/kill_3.png)
 3. 管理员出手杀死了登录的进程
-![Alt text](kill_4.png)
+![](data/Linux/kill_4.png)
 4. 小红被踢下线了
-![Alt text](kill_5.png)
+![](data/Linux/kill_5.png)
 
 ### 10.3 查看进程树
-![Alt text](pstree_1.png)
-![Alt text](pstree_2.png)
-![Alt text](pstree_3.png)
+![](data/Linux/pstree_1.png)
+![](data/Linux/pstree_2.png)
+![](data/Linux/pstree_3.png)
 
-### 10.3 服务管理
-![Alt text](service_1.png)
+### 10.4 服务管理
+#### 10.4.1 service
+
+![](data/Linux/service_1.png)
 本质上远程连接的端口号表示的就是当前远程连接守护进程的进程号
-![Alt text](service_2.png)
+
+#### 10.4.1 setup
+
+![](data/Linux/setup_1.png)
 需要注意的是，centos8后的系统没有setup指令
-![Alt text](service_3.png)
+
+#### 10.4.2 chkconfig
+
+![](data/Linux/chkconfig_1.png)
+
+![](data/Linux/chkconfig_2.png)
+
+![](data/Linux/chkconfig_3.png)
+
+在centos8后只会显示这样的效果
+
+![](data/Linux/chkconfig_4.png)
+  
+chkconfig重新设置服务自启动后需要重启才能生效
+
+#### 10.4.3 systemctl
+
+![](data/Linux/systemctl_1.png)
+![](data/Linux/systemctl_2.png)
+* systemctl stop/start 服务名 : 关闭/开启服务(临时更改)
+* systemctl enable/disable 服务名 : 关闭/开启服务(自启动，永久更改)
+* systemctl is-enabled 服务名 : 查看该服务是否为自启动
+![](data/Linux/isystemctl_3.png)
+* netstat -anp 访问网络状态
+![](data/Linux/systemctl_4.png)
+此时若是防火墙失效那么我们可以直接连接虚拟机的111端口
+测试防火墙时需要用到本机的telnet指令 `telnet ip地址 想访问的端口号`~~下图写错了但不影响。~~
+![](data/Linux/systemctl_5.png)
+出现以上问题后需要`打开控制面板` -> `启动或关闭Windows功能`  -> `Telnet客户端`
+![](data/Linux/systemctl_6.png)
+![](data/Linux/systemctl_7.png)
+命令成功，在防火墙开启的情况下我们主机无法使用Telnet直接连接到虚拟机的111端口
+![](data/Linux/systemctl_8.png)
+让我们把防火墙关掉试试？
+![](data/Linux/systemctl_9.png)
+成功了
+![](data/Linux/systemctl_10.png)
+记得在最后把防火墙开起来
+![](data/Linux/systemctl_11.png)
