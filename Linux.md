@@ -509,3 +509,25 @@ ___
 
 ### 10.2 终止进程
 ![Alt text](data/Linux/kill_1.png)
+
+#### 10.2.1 实例
+1. 小红登录了
+![Alt text](kill_2.png)
+2. 管理员发现了并且找到了登录的pid为6253
+![Alt text](kill_3.png)
+3. 管理员出手杀死了登录的进程
+![Alt text](kill_4.png)
+4. 小红被踢下线了
+![Alt text](kill_5.png)
+
+### 10.3 查看进程树
+![Alt text](pstree_1.png)
+![Alt text](pstree_2.png)
+![Alt text](pstree_3.png)
+
+### 10.3 服务管理
+![Alt text](service_1.png)
+本质上远程连接的端口号表示的就是当前远程连接守护进程的进程号
+![Alt text](service_2.png)
+需要注意的是，centos8后的系统没有setup指令
+![Alt text](service_3.png)
