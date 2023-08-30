@@ -99,7 +99,9 @@ ___
 此时`img_name`显示窗口将不会自动关闭，需要手动关闭
 
 ##### 1.1.2.4 销毁
-
+* `destoryallwindows`: 是`opencv`中用于销毁显示窗口的函数。当调用该函数时将会销毁目前产生的所有显示窗口。
+  
+##### 1.1.2.5 
 
 #### 1.2 实例
 如果想快速实现某种操作可以在此处进行寻找
@@ -110,8 +112,19 @@ img  = cv2.imread("test.jpg") # 读取
 cv2.imshow("img_name",img)  # 显示
 cv2.waitKey(0)  # 等待
 ```
+
 #### 1.2.2 显示摄像头获取的视频 (完整流程)
 ```python
+import cv2
+img  = cv2.VideoCapture(0)
 
+while True :
+    _,frame = img.read()
+    print(frame)
+    cv2.imshow("img_name",frame)
+    if cv2.waitKey(1) &  0xff == ord("q"): # 在英文状态下，按下按s键 q 会关闭显示窗口    
+        break
+cv2.destoryallwindows()
 ```
+当然直接写成`cv2.waitKey(1) == ord("q")`同样也是可以跑的,`waitKey`中的值决定了帧数的上限
 #### 1.2.3 
