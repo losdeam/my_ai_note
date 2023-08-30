@@ -85,6 +85,7 @@ ___
 需要注意的是，如果出现同名的显示框，那么会出现覆盖的现象，当然，我们也可以使用通过这样的特性来显示视频。
 
 ##### 1.1.2.3 等待
+###### 1.1.2.3.1 waitKey
 * `waitKey` : 是`opencv`中最为常见的`等待`方式,常用于保存`imshow`函数所产生的显示窗口.
 ``` python
     cv2.imshow('img_name',img)
@@ -99,10 +100,24 @@ ___
 此时`img_name`显示窗口将不会自动关闭，需要手动关闭
 
 ##### 1.1.2.4 销毁
+###### 1.1.2.4.1  destoryallwindows
 * `destoryallwindows`: 是`opencv`中用于销毁显示窗口的函数。当调用该函数时将会销毁目前产生的所有显示窗口。
   
-##### 1.1.2.5 
+##### 1.1.2.5 颜色空间转换
+###### 1.1.2.5.1 cvtColor
+* `cvtColor` : 是`opencv`中用于进行色域转换的函数,当调用该函数时将会对所给图片进行颜色空间转换
+```python
+image_hsv = cv2.cvtColor(image,cv2.COLOR_BGR2HSV)
+```
+当然opencv支持的所有颜色空间如`BGR`、`RGB`、`GRAY`、`HSV`等均可以进行转换。只要更改格式为`cv2.COLOR_转换前格式 2 转换后格式`。即可
 
+
+##### 1.1.2.6 图像修整
+###### 1.1.2.6 resize
+* `reshape` : 是`opencv`中用于进行色域转换的函数
+```python
+resize(src, dsize, dst=None, fx=None, fy=None, interpolation=None)
+```
 #### 1.2 实例
 如果想快速实现某种操作可以在此处进行寻找
 #### 1.2.1 显示一张图片(完整流程)
@@ -127,4 +142,16 @@ while True :
 cv2.destoryallwindows()
 ```
 当然直接写成`cv2.waitKey(1) == ord("q")`同样也是可以跑的,`waitKey`中的值决定了帧数的上限
-#### 1.2.3 
+#### 1.2.3 修整图像大小并进行颜色空间转换
+```python
+import cv2
+img  = cv2.imread("test.jpg") # 读取
+BGR_img =  cv2.resize(img,(320,320))
+cv2.imshow("img_BGR",BGR_img)  # 显示
+hsv_img = cv2.cvtColor(BGR_img,cv2.COLOR_BGR2HSV)
+cv2.imshow("img_HSV",hsv_img)  # 显示
+GRAY_img=cv2.cvtColor(BGR_img,cv2.COLOR_BGR2GRAY)
+cv2.imshow("img_GRAY",GRAY_img)  # 显示
+cv2.waitKey(0)
+```
+![Alt text](data/cv/cv_1.png)
