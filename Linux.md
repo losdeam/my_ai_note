@@ -1,4 +1,7 @@
 # [笔记目录](目录.md)
+____
+[TOC]
+___
 # Linux部分
 在b站上跟随[【小白入门 通俗易懂】2021韩顺平 一周学会Linux](https://www.bilibili.com/video/BV1Sv411r7vd/?spm_id_from=333.337.search-card.all.click&vd_source=3b0e33a626cf5e45835cac5d91093908)开始进行Linux的学习
 
@@ -526,7 +529,7 @@ ___
 ![](data/Linux/pstree_3.png)
 
 ### 10.4 服务管理
-#### 10.4.1 service
+#### 10.4.1 service : 查看服务
 
 ![](data/Linux/service_1.png)
 本质上远程连接的端口号表示的就是当前远程连接守护进程的进程号
@@ -536,7 +539,7 @@ ___
 ![](data/Linux/setup_1.png)
 需要注意的是，centos8后的系统没有setup指令
 
-#### 10.4.2 chkconfig
+#### 10.4.2 chkconfig ： 服务自启动
 
 ![](data/Linux/chkconfig_1.png)
 
@@ -550,19 +553,20 @@ ___
   
 chkconfig重新设置服务自启动后需要重启才能生效
 
-#### 10.4.3 systemctl
+#### 10.4.3 systemctl ： 服务管理
 
 ![](data/Linux/systemctl_1.png)
 ![](data/Linux/systemctl_2.png)
-* systemctl stop/start 服务名 : 关闭/开启服务(临时更改)
-* systemctl enable/disable 服务名 : 关闭/开启服务(自启动，永久更改)
-* systemctl is-enabled 服务名 : 查看该服务是否为自启动
+* `systemctl stop/start 服务名` : 关闭/开启服务(临时更改)
+* `systemctl enable/disable 服务名` : 关闭/开启服务(自启动，永久更改)
+* `systemctl is-enabled 服务名` : 查看该服务是否为自启动
 ![](data/Linux/isystemctl_3.png)
-* netstat -anp 访问网络状态
+* `netstat -anp` | 访问网络状态
 ![](data/Linux/systemctl_4.png)
 此时若是防火墙失效那么我们可以直接连接虚拟机的111端口
-测试防火墙时需要用到本机的telnet指令 `telnet ip地址 想访问的端口号`~~下图写错了但不影响。~~
+测试防火墙时需要用到本机的telnet指令 `telnet ip地址 想访问的端口号`
 ![](data/Linux/systemctl_5.png)
+
 出现以上问题后需要`打开控制面板` -> `启动或关闭Windows功能`  -> `Telnet客户端`
 ![](data/Linux/systemctl_6.png)
 ![](data/Linux/systemctl_7.png)
@@ -574,3 +578,27 @@ chkconfig重新设置服务自启动后需要重启才能生效
 ![](data/Linux/systemctl_10.png)
 记得在最后把防火墙开起来
 ![](data/Linux/systemctl_11.png)
+
+#### 10.4.4 firewall : 防火墙设置
+![](data/Linux/firewall_1.png)
+1. 使用 netstat -ant 查看端口号所使用的协议
+![](data/Linux/firewall_2.png)
+2. 使用 firewall-cmd --permanent --add-port=111/tcp 开放虚拟机的111端口
+![](data/Linux/firewall_3.png)
+3. 重新载入防火墙(使得改动生效)
+![](data/Linux/firewall_4.png)
+4. 成功进入
+![](data/Linux/firewall_5.png)
+5. 关闭端口
+![](data/Linux/firewall_6.png)
+6. 连接失败
+![](data/Linux/firewall_7.png)
+
+#### 10.5  动态进程监控
+![](data/Linux/top_1.png)
+![](data/Linux/top_2.png)
+![](data/Linux/top_3.png)
+![](data/Linux/top_4.png)
+
+#### 10.6 服务监控
+![](data/Linux/netstat_1.png)
