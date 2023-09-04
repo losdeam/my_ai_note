@@ -620,6 +620,10 @@ chkconfig重新设置服务自启动后需要重启才能生效
 ![](data/Linux/rpm_6.png)
 - rpm -e xxx
 ![](data/Linux/rpm_7.png)
+
+
+
+![Alt text](image.png)
 - rpm ivh xxx
 ![](data/Linux/rpm_8.png)
 
@@ -633,3 +637,8 @@ chkconfig重新设置服务自启动后需要重启才能生效
 恢复了
 ![](data/Linux/yum_2.png)
 [具体原因点这里](https://blog.csdn.net/misterhuangchao/article/details/125042901?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169355963616800188564806%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169355963616800188564806&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~sobaiduend~default-1-125042901-null-null.nonecase&utm_term=%E9%94%99%E8%AF%AF%EF%BC%9A%E4%B8%BA%E4%BB%93%E5%BA%93%20appstream%20%E4%B8%8B%E8%BD%BD%E5%85%83%E6%95%B0%E6%8D%AE%E5%A4%B1%E8%B4%A5%20%3A%20Cannot%20prepare%20internal%20mirrorlist%3A&spm=1018.2226.3001.4187)
+
+
+
+![Alt text](image-1.png)
+![Alt text](image-2.png)
