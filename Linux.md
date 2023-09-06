@@ -640,5 +640,5 @@ chkconfig重新设置服务自启动后需要重启才能生效
 
 
 
-![Alt text](image-1.png)
-![Alt text](image-2.png)
+![Alt text](yum_3.png)
+![Alt text](yum_4.png)
