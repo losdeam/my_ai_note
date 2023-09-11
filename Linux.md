@@ -644,3 +644,5 @@ chkconfig重新设置服务自启动后需要重启才能生效
 ![Alt text](data/Linux/yum_4.png)
 
 Linux 基础篇学习完成。
+____
+[返回目录](目录.md)
