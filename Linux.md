@@ -623,7 +623,7 @@ chkconfig重新设置服务自启动后需要重启才能生效
 
 
 
-![Alt text](image.png)
+![Alt text](data/Linux/rpm_9.png)
 - rpm ivh xxx
 ![](data/Linux/rpm_8.png)
 
@@ -640,5 +640,7 @@ chkconfig重新设置服务自启动后需要重启才能生效
 
 
 
-![Alt text](yum_3.png)
-![Alt text](yum_4.png)
+![Alt text](data/Linux/yum_3.png)
+![Alt text](data/Linux/yum_4.png)
+
+Linux 基础篇学习完成。
