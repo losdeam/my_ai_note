@@ -7,7 +7,7 @@
 
 
 为什么使用layernorm而不是 batchNorm：
-![Alt text](image.png)
+![Alt text](image/transformer_1.png)
 简单理解，batchNOrm是竖着切，受样本长度影响大，如果样本长度不均匀，同时也会影响到全局方差以及平均值，而layernorm是横着切，局部的方差以及平均值仅是单样本的，受样本长度影响小。
 
 解码部分：
@@ -23,21 +23,21 @@ scaled dot-product attention
 3. 每一个query和key做内积，以作为相似度，越大相似度越高
 4. 除以根号dk 
 5. 以softmax来得到权重
-   ![Alt text](image-2.png)
+   ![Alt text](image/transformer_2.png)
 6. 将权重作用与value上以得到正式输出
    
 优化：
 query作为矩阵，
 
-![Alt text](image-3.png)
+![Alt text](image/transformer_3.png)
 通过矩阵乘法来是实现query与key的内积
 
 当dk较大时，会导致梯度没法下降
-![Alt text](image-4.png)
+![Alt text](image/transformer_4.png)
 
 加入mask以防止训练中预测时将当前状态及其之后的状态作为输入
 -> 将对应位置及其之后位置的值更改为一个极大的负数，在经过softmax后便会趋向于0
 
 
 多头注意力
-![Alt text](image-5.png)
+![Alt text](image/transformer_5.png)

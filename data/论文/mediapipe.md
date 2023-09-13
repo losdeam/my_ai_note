@@ -5,7 +5,7 @@ bottom-up的模型 (通常使用于多对象姿态估计)
 
 
 backbone
-![Alt text](image-1.png)
+![Alt text](image/mediapipe_1.png)
 使用残差连接来获取浅层特征
 
 Neck
