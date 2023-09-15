@@ -648,8 +648,19 @@ Linux 基础篇学习完成。
 
 # Linux 强化篇
 ## *1.python开发
-### Ubuntu安装
+### *1.1 Ubuntu安装
+前往[Ubuntu官网](https://cn.ubuntu.com/download),以下载最新版本的Ubuntu。
+然后的安装结合centos一样了。
+### *1.2 python使用
+Ubuntu安装会自带python环境
+![Alt text](data/Linux/Ubuntu_python_1.png)
+简约python程序的编写，
+- 使用`vi helloworld.py`编写一个python 文件
+![Alt text](data/Linux/Ubuntu_python_2.png)
+- 使用`python3 helloworld.py`以执行该文件
+![Alt text](data/Linux/Ubuntu_python_3.png)
 
+#### *1.2.1 apt的使用
 
 
 ____
