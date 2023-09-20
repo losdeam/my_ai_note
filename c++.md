@@ -635,6 +635,25 @@ ___
 ```c++
 cout << "int is " << sizeof(int) << "bytes" <<endl; // int is 4 bytes
 ```
+# 6.c++的语法
+## 6.1循环结构
+### 6.1.1 for 
+for循环是最为常用的循环结构
+```c++
+for (initialization;test_expression;update_expression)
+{
+    body
+}
+```
+- **initialization**,在循环的开始执行一次，通常用于变量初始化
+- **test_expression(测试表达式)**，判断循环体是否继续执行(当为bool是满足True，数值时需要满足不为0)
+- **body(本体)**，每轮循环所要进行的操作
+- **update_expression(更新表达式)**，在每轮循环结束时执行
+实例 *(当只有一条语句时可以省略`{}`)*
+```c++
+for(i=0;i<5;i++) cout<<i ;
+```
+
 
 ____
 [返回目录](目录.md)
