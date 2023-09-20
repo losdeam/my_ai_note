@@ -255,7 +255,7 @@ ______
 * `*` : 乘法运算
 * `/` : 除法运算，除数与被除数均为整数时将会返回商的整数部分，小数部分将被忽略
 * `%` ：取模运算，获取除后余数，用于浮点数时会出现报错
-  
+* `++` : 递增运算符，
 ___
 
 ## 4.复合类型
@@ -374,6 +374,14 @@ ____
 ```c++
     string str1 ;
     string str2 = "test";
+```
+#### 4.3.1相关函数
+##### 4.3.1.1 size
+&emsp;&emsp;用于输出String变量的长度
+```c++
+    String word;
+    ···
+    cout << word.size()
 ```
 ___
 ### 4.4 结构
@@ -635,9 +643,9 @@ ___
 ```c++
 cout << "int is " << sizeof(int) << "bytes" <<endl; // int is 4 bytes
 ```
-# 6.c++的语法
-## 6.1循环结构
-### 6.1.1 for 
+## 6.c++的语法
+### 6.1循环结构
+#### 6.1.1 for 
 for循环是最为常用的循环结构
 ```c++
 for (initialization;test_expression;update_expression)
@@ -653,6 +661,9 @@ for (initialization;test_expression;update_expression)
 ```c++
 for(i=0;i<5;i++) cout<<i ;
 ```
+需要注意的是，在`initialization`中声明的变量也会在循环结束的同时被销毁
+#### 6.1.2 while
+
 
 
 ____
