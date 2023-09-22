@@ -157,6 +157,7 @@ cv2.waitKey(0)
 ![Alt text](data/cv/cv_1.png)
 
 ## 2.经典数据集
+![Alt text](data/cv/dataset.png)
 ### 2.1 Fashion-mnist
 Fashion-mnist是一个替代MNIST手写数字集的图像数据集。它是由Zalando（一家德国的时尚科技公司）旗下的研究部门提供。其涵盖了来自10种类别的共7万个不同商品的正面图片。Fashion-mnist的大小、格式和训练集/测试集划分与原始的MNIST完全一致。60000/10000的训练测试数据划分，28×28的灰度图片。你可以直接用它来测试你的机器学习和深度学习算法性能，且不需要改动任何的代码。
 ## 3.经典模型
@@ -164,5 +165,35 @@ Fashion-mnist是一个替代MNIST手写数字集的图像数据集。它是由Za
 
 ## 4.模型实现
 ([里头请](data/cv/model_1.ipynb))
+
+## 5.模型微调
+### 5.1 torchvision
+- torchvision.datasets : 可以快速调用所有经典数据集。
+示例：
+>   `torchvision.datasets.MNIST(root: str, train: bool=True, transform: Optional[Callable]=None, target_transform: Optional[Callable]=None, download: bool=False)`
+>          **root**：就是你想要保存MNIST数据集的位置，如果download是Flase的话，则会从目标位置读取数据集
+>           **download**：True的话就会自动从网上下载这个数据集，到root的位置
+>           **train**：True的话，数据集下载的是训练数据集；False的话则下载测试数据集
+>           **transform**：这个是对图像进行处理的transform，比方说旋转平移缩放，输入的是PIL格式的图像
+>           **target_transform**：这个是对图像标签进行处理的函数
+- `torchvision.models` ：可以快速调用经典模型
+示例：
+```python
+import torchvision.models as models
+resnet18 = models.resnet18(pretrained=True)
+alexnet = models.alexnet(pretrained=True)
+squeezenet = models.squeezenet1_0(pretrained=True)
+vgg16 = models.vgg16(pretrained=True)
+densenet = models.densenet161(pretrained=True)
+inception = models.inception_v3(pretrained=True)
+googlenet = models.googlenet(pretrained=True)
+shufflenet = models.shufflenet_v2_x1_0(pretrained=True)
+mobilenet = models.mobilenet_v2(pretrained=True)
+resnext50_32x4d = models.resnext50_32x4d(pretrained=True)
+wide_resnet50_2 = models.wide_resnet50_2(pretrained=True)
+mnasnet = models.mnasnet1_0(pretrained=True)
+```
+### STN
+
 ____
 [返回目录](目录.md)
