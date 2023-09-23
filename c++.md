@@ -1,4 +1,6 @@
 # [笔记目录](目录.md)
+
+<p id= "head"></p>
 [TOC]
 # c++部分
 &emsp;&emsp;本文档基于本人在使用[C++ Primer Plus(第6版)](https://detail.tmall.com/item.htm?ali_refid=a3_430673_1006:1110169018:N:1SEYC6BrFkWyec2+BRr6qNLV2e79Xy+FuLmx4IOJ/U4=:a4b7eae6733d3abccb1e46986f247992&ali_trackid=162_a4b7eae6733d3abccb1e46986f247992&id=40346852306&spm=a2e0b.20350158.31919782.1)中的学习总结而出。内容大都为书中的内容的。
@@ -761,6 +763,65 @@ int main()
     return 0 ;
 }
 ```
+- `clock` : 返回程序开始执行后所用的系统时间
+- `CLOCKS_PER_SEC` : 保存在`ctime`中，常量，等于每秒钟包含的系统时间单位数
+- `clock_t` : clock函数的返回类型别名 
 
-____
+> 类型别名
+> 替换类型的名称
+> ```c++
+> #define BYTE char     // 将BYTE作为char的别名
+> typedef char BYTE;    // 将BYTE作为char的别名
+>```
+
+#### 6.1.3 do while 
+出口条件循环，即必定先执行一次循环体再确定是否满足测试表达式 。
+```c++
+do
+    body
+while (test_expression)
+```
+实例：(实现输入判断)
+```c++
+#include <iostream>
+int main()
+{
+    using namespace std;
+    int n ;
+    cout << "Enter numbers in the range 1-10 to find ";
+    cout << "my favorite number\n";
+    do 
+    {
+        cin >> n ;
+    } while (n!= 7);
+    cout << "Yes,7 is my favorite.\n";
+    return 0 ;
+}
+```
+不输入7就一直重复输入
+
+#### 6.1.4 基于范围的for循环
+
+不修改数据
+```c++
+double preices[5] = {4.99,10.99,6.87,7.99,8.49}
+for (double x : prices)
+    cont << x << std::endl;
+```
+
+修改数组数据
+```c++
+for (double &x : prices)
+    x = x * 0.80;
+```
+### 6.2 分支语句
+```c++
+if (test_condition)
+    statement 
+```
+如果`test_condition`为真则执行，否则跳过
+
+
+___
+[返回头部](#head)
 [返回目录](目录.md)
