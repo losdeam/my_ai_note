@@ -668,7 +668,52 @@ ______
     </tr>
 </table>
 
-___
+### 3.3 逻辑表达式
+- `||` : 逻辑or运算符,顺序执行即当左侧已满足条件时不会对右侧进行判断；
+```c++
+int a = 6 , b = 8 ;
+if(a == 6 || ++b == 9 ) cout << b ; // 8
+if(++b == 9 || a == 6 )  cout << b; // 9
+```
+- `&&` : 逻辑AND运算符，同样也是顺序执行，当左侧不满足时不会对右侧进行判断；
+```c++
+int a = 6 , b = 8 ;
+if(a != 6 && ++b != 9 )  cout << a ;  // 无输出
+cout << b ;  // 8 
+if(++b != 9 && a != 6 )  cout << a; // 无输出
+cout << b ;  // 9
+```
+- `!` : 逻辑NOT运算符，真值取反
+```c++
+bool flag = false ;
+if( !flag   ) cout << 1 << endl;  // 1
+```
+- `?` : 用于替代 `if else` 语句
+```c++
+bool flag = false ;
+int c = flag ? 2 : 6;
+cout << c ; // 6
+```
+<table>
+    <tr align = "center">
+        <td colspan = "2">运算符 </td>
+        <td colspan = "2"> 另一种表示方式 </td>
+    </tr>
+    <tr align = "center">
+        <td colspan = "2">&& </td>
+        <td colspan = "2"> and </td>
+    </tr>
+        <tr align = "center">
+        <td colspan = "2">|| </td>
+        <td colspan = "2"> or </td>
+    </tr>
+        <tr align = "center">
+        <td colspan = "2">! </td>
+        <td colspan = "2"> not </td>
+    </tr>
+</table>
+
+<hr>
 
 ## 5.C++的语句
 
@@ -815,11 +860,66 @@ for (double &x : prices)
     x = x * 0.80;
 ```
 ### 6.2 分支语句
+#### 6.2.1 if else
 ```c++
 if (test_condition)
-    statement 
+    statement1
+else
+    statement2
 ```
-如果`test_condition`为真则执行，否则跳过
+如果`test_condition`为真则执行statement1，否则执行statement2
+
+#### 6.2.2 switch
+```c++
+switch(integer-expression)
+{
+    case label1 : statement(s1)
+    case label2 : statement(s2)
+    case label3 : statement(s3)
+    ...
+    default : statement(s)
+}
+```
+跳转到integer-expression所标记的行进行执行，若不存在，则跳转至default行执行。需要注意的是，跳转执行并不会略过标记行后的语句，
+```c++
+switch(1)
+{
+    case 1 : cout << 1 ;
+    case 2 : cout << 2 ;
+    case 3 : cout << 3 ;
+    default : cout << 4 ;
+} // 1234 
+```
+所以需要在每一段的语句结尾处添加break以终止运行。
+```c++
+switch(1)
+{
+    case 1 : cout << 1 ;break;
+    case 2 : cout << 2 ;break;
+    case 3 : cout << 3 ;break;
+    default : cout << 4;break;
+} // 1s
+```
+但同样也可以利用这样的特性
+```c++
+switch(1)
+{
+    case 1 : 
+    case 2 : cout << 1 ;break;
+    case 3 : 
+    case 4 : cout << 2;break;
+    default : cout << 4;break;
+} // 1
+```
+这样1,2 | 3,4 标签分组指向同一语句段。
+#### 6.2.3 break
+跳出循环
+
+#### 6.2.4 continue
+跳过当前循环
+
+### 6.3 文件输入/输出
+#### 6.3.1 输入
 
 
 ___
