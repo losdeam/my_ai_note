@@ -648,6 +648,12 @@ Linux 基础篇学习完成。
 
 # Linux 强化篇
 ## *1.python开发
+### *1.0 问题
+#### *1.0.1 无法进行远程连接
+发现Ubuntu虚拟机上有网并且能与主机间互相ping通但是远程连接就是连不上
+![Alt text](data/Linux/Ubuntu_error_1.png)
+发现是压根就没有ssh服务
+使用`sudo apt-get install ssh`安装后
 ### *1.1 Ubuntu安装
 前往[Ubuntu官网](https://cn.ubuntu.com/download),以下载最新版本的Ubuntu。
 然后的安装结合centos一样了。
@@ -665,3 +671,5 @@ Ubuntu安装会自带python环境
 
 ____
 [返回目录](目录.md)
+
+
