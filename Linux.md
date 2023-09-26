@@ -667,8 +667,51 @@ Ubuntu安装会自带python环境
 ![Alt text](data/Linux/Ubuntu_python_3.png)
 
 #### *1.2.1 apt的使用
+通过`/etc/apt/sources.list`中的地址来指向服务器地址，在服务器中寻找下载资源,默认为美国apt，但可以修改为清华镜像源
 
+- `sudo apt-get update` ：$\color{#FF0000}{更新源}$
+- `sudo apt-get install package`  $\color{#FF0000}{安装包}$
+- `sudo apt-get remove package` $\color{#FF0000}{删除包}$
+- `sudo apt-get search pacjage` 搜索软件包
+- `sudo apt-cache show package` $\color{#FF0000}{获取包的相关信息}$
+- `sudo apt-get install package --reinstall` 重新安装包
+- `sudo apt-get -f install` 修复安装
+- `sudo apt-get remove package --purge` 删除包及其配置文件
+- `sudo apt-get build-dep package` 安装相关的编译环境
+- `sudo apt-get upgrade` 更新已安装的包
+- `sudo apt-get dist-upgrade` 升级系统
+- `sudo apt-cache depends package` 了解使用该包的依赖项
+- `sudo apt-cache redepends package` 查看该包被哪些包依赖
+- `sudo apt-get source package`  $\color{#FF0000}{下载该包的源代码}$
+##### *1.2.1.1 更换镜像地址
+在修改前建议先使用
+`sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup`
+来备份一遍原始文件，以免修改过程中出现失误
+![Alt text](data/Linux/Ubuntu_apt_1.png)
+1. 使用 `echo "" > /etc/aptsorces.list` 清空文件
+![Alt text](data/Linux/Ubuntu_apt_2.png)
+2. 复制镜像网站的地址到文件中
+3. 使用`sudo apt-get update`
+来更新下载源![Alt text](data/Linux/Ubuntu_apt_3.png)
+##### *1.2.1.2 实例
+vim的安装
+![Alt text](data/Linux/Ubuntu_apt_4.png)
+默认使用vi而不是vim
+- 安装
+![Alt text](data/Linux/Ubuntu_apt_5.png)
+![Alt text](data/Linux/Ubuntu_apt_6.png)
+- 查看
+![Alt text](data/Linux/Ubuntu_apt_7.png)
+- 删除
+![Alt text](data/Linux/Ubuntu_apt_8.png)
+![Alt text](data/Linux/Ubuntu_apt_9.png)
+### *1.3 远程连接
+Ubuntu中默认情况下并没有安装sshd服务，所以并不能直接进行远程连接
+需要安装两个包
+- `apt install net-tools`
+- `sudo apt-get install openssh-server`
 
+再输入`service sshd start`开启服务就可以了
 ____
 [返回目录](目录.md)
 
