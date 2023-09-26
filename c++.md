@@ -763,7 +763,7 @@ strcmp(str1,str2)
 
 > String类型可以直接使用关系表示符进行判断。
 
-## 6.c++的语法
+## 6.C++的语法
 ### 6.1循环结构
 #### 6.1.1 for 
 for循环是最为常用的循环结构
@@ -920,8 +920,67 @@ switch(1)
 
 ### 6.3 文件输入/输出
 #### 6.3.1 输入
+1. 包含头文件fstream
+2. 创建一个ofstream对象
+3. 将该ofstream对象同一个文件关联起来
+4. 使用与cont相同的方式使用ofstream对象
+```c++
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ofstream outFile; //创建一个ofstream对象
+    outFile.open("test.txt"); //将对象与特定文件相关联,并且打开文件（当文件不存在时自动创建，存在时默认清空其中内容再进行输入）
+    outFile << "test1" << endl; //输入到文件中
+    outFile << "test2" << endl; //输入到文件中
+    outFile.close(); //关闭文件
+    return 1 ;
+}
+```
+![Alt text](data/c++/ofstream_1.png)
 
+#### 6.3.2 读取
+1. 必须包含头文件fstream
+2. 头文件fstream定义了一个用于处理输入的ifstream类
+3. 需要声明ifstream变量
+4. 必须指明名称空间std
+5. 需要将ifstream对象与文件相关联
+6. 使用完毕后应使用close()进行关闭
+7. 使用与cin相同的方式使用ofstream对象
+```c++
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int main()
+{
+    ifstream inFile;  //创建一个ifstream对象
+    string str ;
+    inFile.open("test.txt"); //将对象与特定文件相关联,并且打开文件（当文件不存在时依然会执行，直到后续进行输出的时候才会报错）
+    if (!inFile.is_open())  //由于判断文件是否被打开，未打开则直接跳出，以防止后续报错
+    {
+        exit(EXIT_FAILURE);
+    }
+    inFile >> str ;   
+    cout << str ;   
+    return 1 ;
+}
+```
+## 7.C++的函数
+### 7.1 自定义函数
+#### 7.1.1 定义函数
+```c++
+type functionName(parameterList)
+{
+    statements(s)
+    return; 
+}
+```
+- parameterList : 指定传递给函数的参数类型和数量
+- type : 函数的返回类型，void为无返回，其余时候均为返回值的类型。不同类型将会尝试进行强制转换。
+#### 7.1.2 函数原型和函数调用
 
-___
+<hr>
 [返回头部](#head)
 [返回目录](目录.md)
