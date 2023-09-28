@@ -980,7 +980,21 @@ type functionName(parameterList)
 - parameterList : 指定传递给函数的参数类型和数量
 - type : 函数的返回类型，void为无返回，其余时候均为返回值的类型。不同类型将会尝试进行强制转换。
 #### 7.1.2 函数原型和函数调用
+当c++使用在main函数后定义的函数时，需要先声明函数的原型。
+```c++
+void cheers(int);
+int main()
+{
+    cheers(5);
+    return 1 ;
+}
+void cheers(int n)
+{
+    return n ;
+}
+```
 
+#### 7.1.3 形参与实参
 
 ## C++实战
 考虑到篇幅较长，而且内容相关性并不是那么大，所以选择进行分页
