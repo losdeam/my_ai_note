@@ -4,3 +4,8 @@ data/cv/data
 data/深度学习/download
 data/深度学习/model/best.pth
 data/cv/__pycache__
+data/python/flask/test/__pycache__/config.cpython-39.pyc
+data/python/flask/test/__pycache__/exts.cpython-39.pyc
+data/python/flask/test/__pycache__/models.cpython-39.pyc
+data/python/flask/test/blueprints/__pycache__/auth.cpython-39.pyc
+data/python/flask/test/blueprints/__pycache__/qa.cpython-39.pyc
