@@ -2,4 +2,5 @@ from exts import db
 
 
 class UserModel(db.Model):
-    pass
+    __tablename__ = "user"
+    id = db.Column(db.Inter)

@@ -5,9 +5,9 @@ ____
 ## 1.安装
 
 ## 2.基础
-## 蓝图
+### 蓝图
  蓝图是每个模块中可以重复使用的部分。使用蓝图可以大幅度的降低代码的复杂度
-
+### 
 ## 3.实战
 ### 3.1 整体结构
 1. 创建`static文件夹`与`templates文件夹`与`app.py`文件。
@@ -23,8 +23,11 @@ ____
 4. 创建`blueprints文件夹`用于保存网页蓝图
 ![Alt text](img/flask_init_1.png)
 
+### 3.2 数据库
+1. 在MySQL中创建一个数据库
+2. 
 
-## 3.问题总结
+## 4.问题总结
 > **问题：在输出flask db init时出现**
 > PS D:\pythonProject> flask db init Usage: flask [OPTIONS] COMMAND [ARGS]... Try  'flask --help' for help. Error: No such command 'db'.
 > **原因：**
@@ -55,3 +58,6 @@ ____
 > TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
 > **解决：**
 > 发现是MAIL_PORT 参数出错，该参数并不是自己网页所设置的端口号，而是邮箱服务的端口号，qq邮箱的端口号为465 ，更改后完成邮件的发送
+
+> **问题：MySQL数据库密码遗忘**
+> 解决：[忘记mysql密码后如何修改密码（2022最新版详细教程保姆级）](https://blog.csdn.net/qq_45890970/article/details/122944537)(2023.10 实测依然有效)
