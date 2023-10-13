@@ -1,8 +1,9 @@
-data/cv/test.ipynb
-data/cv/model/best.pth
-data/cv/data 
-data/深度学习/download
-data/深度学习/model/best.pth
+data/ai/cv/test.ipynb
+data/ai/cv/model/best.pth
+data/ai/cv/data 
+data/ai/深度学习/download
+data/ai/深度学习/model/best.pth
 data/cv/__pycache__
 data/python/flask/test/__pycache__/
 data/python/flask/test/blueprints/__pycache__/
+data
