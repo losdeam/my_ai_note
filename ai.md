@@ -16,3 +16,6 @@
 
 ## cv部分
 [正文跳转](data/ai/cv/cv.md)
+
+## 大模型部分
+[正文跳转](data/ai/LLM/大模型.md)
