@@ -7,5 +7,6 @@ data/ai/深度学习/download
 data/ai/深度学习/model/best.pth
 
 # 后端部分
-data/python/flask/test/__pycache__/
-data/python/flask/test/blueprints/__pycache__/
+data/python/flask/test
+
+
