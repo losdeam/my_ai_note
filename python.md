@@ -23,3 +23,7 @@
 # 3.web部分
 ## 3.1 flask
 [跳转至flask部分](data/python/flask/flask.md)
+
+
+## 3.2 socket
+[跳转至socket部分](data/python/socket/socket.md)
