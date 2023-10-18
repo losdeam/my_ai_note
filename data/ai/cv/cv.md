@@ -114,7 +114,7 @@ image_hsv = cv2.cvtColor(image,cv2.COLOR_BGR2HSV)
 
 ##### 1.1.2.6 图像修整
 ###### 1.1.2.6 resize
-* `reshape` : 是`opencv`中用于进行色域转换的函数
+* `resize` : 是`opencv`中用于进行色域转换的函数
 ```python
 resize(src, dsize, dst=None, fx=None, fy=None, interpolation=None)
 ```
