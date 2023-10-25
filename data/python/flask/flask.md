@@ -89,3 +89,8 @@ migrate = Migrate(app,db) #使用Migrate来将app中的db数据库的版本信�
 
 > **问题：MySQL数据库密码遗忘**
 > 解决：[忘记mysql密码后如何修改密码（2022最新版详细教程保姆级）](https://blog.csdn.net/qq_45890970/article/details/122944537)(2023.10 实测依然有效)
+
+# 5.强化部分
+# 5.1 flask_socketio
+允许客户端和服务器之间进行低延迟的双向通信,用于实时性要求较高的场合
+[跳转至flask_socketio](flask_socketio.md)
