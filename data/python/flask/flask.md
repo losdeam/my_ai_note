@@ -94,3 +94,13 @@ migrate = Migrate(app,db) #使用Migrate来将app中的db数据库的版本信�
 # 5.1 flask_socketio
 允许客户端和服务器之间进行低延迟的双向通信,用于实时性要求较高的场合
 [跳转至flask_socketio](flask_socketio.md)
+
+
+# 6.部署
+[Flask项目发布到公网，部署到云服务器](https://blog.csdn.net/vpqtxzmzezeqjj9977/article/details/104271997)
+发现uwsgi安装失败
+Q:ERROR: Could not build wheels for uwsgi, which is required to install pyproject.toml-based projects
+S: 使用conda进行安装
+[【uWSGI】ERROR: Could not build wheels for uwsgi, which is required to install pyproject.toml-based...](https://blog.csdn.net/weixin_45800258/article/details/132810710)
+语句一条一条的试，总有有一条能下的
+

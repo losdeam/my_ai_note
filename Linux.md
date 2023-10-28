@@ -688,7 +688,7 @@ Ubuntu安装会自带python环境
 `sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup`
 来备份一遍原始文件，以免修改过程中出现失误
 ![Alt text](data/Linux/Ubuntu_apt_1.png)
-1. 使用 `echo "" > /etc/aptsorces.list` 清空文件
+1. 使用 `echo "" > /etc/apt/sorces.list` 清空文件
 ![Alt text](data/Linux/Ubuntu_apt_2.png)
 2. 复制镜像网站的地址到文件中
 3. 使用`sudo apt-get update`
